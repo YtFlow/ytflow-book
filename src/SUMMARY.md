@@ -2,7 +2,7 @@
 
 [Preface](./preface.md)
 - [Introduction](./chapter_1.md)
-- [Concepts]()
+- [Basics]()
     - [Profile and Plugin]()
     - [Access Point and Descriptor]()
 - [Recipes]()
