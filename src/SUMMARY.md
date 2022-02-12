@@ -1,8 +1,8 @@
 # Summary
 
 [Preface](./preface.md)
-- [Introduction](./chapter_1.md)
-- [Basics]()
+- [Introduction](./introduction.md)
+- [Basics](./basics.md)
     - [Profile and Plugin]()
     - [Access Point and Descriptor]()
 - [Recipes]()

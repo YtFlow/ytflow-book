@@ -1,10 +1,10 @@
 # Preface
 
-The YtFlowCore Book is prepared for those who want to customize their [YtFlowCore](https://github.com/YtFlow/YtFlowCore) (or its UI front ends like [YtFlowApp](https://github.com/YtFlow/YtFlowApp)) Profiles.
+The YtFlowCore Book is prepared for those who want to customize their [YtFlowCore] (or its UI front ends like [YtFlowApp]) Profiles.
 
 ## Prerequisites
 
-To edit YtFlow profiles, you may need a dedicated editor. YtFlowApp has a built-in configuration editor. The `ytflow-edit` [TUI](https://en.wikipedia.org/wiki/Text-based_user_interfaces) tool from YtFlowCore also works.
+To edit YtFlow profiles, you may need a dedicated editor. [YtFlowApp] has a built-in configuration editor. The `ytflow-edit` [TUI](https://en.wikipedia.org/wiki/Text-based_user_interfaces) tool from [YtFlowCore] also works.
 
 Although we are trying to minimize necessary prior knowledge, understanding of network fundamentals can greatly improve your experience while exploring YtFlow. You are not expected to be a network expert (while some of you already are) to get started, as long as you can tell the difference between TCP and UDP.
 
@@ -30,3 +30,6 @@ The YtFlowCore Book is open source and available at [GitHub](https://github.com/
 ---
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
+[YtFlowCore]: https://github.com/YtFlow/YtFlowCore
+[YtFlowApp]: https://github.com/YtFlow/YtFlowApp
