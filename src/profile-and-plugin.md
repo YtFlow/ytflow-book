@@ -12,7 +12,9 @@ Remember that a YtFlowCore instance only runs one profile at a time. If you want
 
 A plugin in a profile is an atomic instance of certain functions, such as stream encoding and decoding, destination rewrite, and dispatching to different plugins. They are designed to be as small as possible, so that you can make the most of them by chaining them in a creative way.
 
-You may have already noticed that outbound client plugins, such as [`shadowsocks-client`](./plugins/shadowsocks-client.md) and [`socks5-client`](./plugins/socks5-client.md), does not care about which address or port your proxy server is running on. They only encode  destination addresses into the streams, but do not change the destination. To redirect all streams to the proxy server, you will need a [`redirect`](./plugins/redirect.md) plugin.
+You may have already noticed that outbound client plugins, such as [`shadowsocks-client`](./plugins/shadowsocks-client.md) and [`socks5-client`](./plugins/socks5-client.md), care nothing about which address or port your proxy server is running on. They only encode  destination addresses into the streams, but do not change the destination. To redirect all streams to the proxy server, you will need a [`redirect`](./plugins/redirect.md) plugin.
+
+> Note that plugins are a integrated part of YtFlowCore. Currently, there is no such mechanism to dynamically load a new type of plugin from a shared library.
 
 ### Parameters
 
