@@ -17,7 +17,7 @@ Establish a new connection for each incoming connection, and forward data betwee
 }
 ```
 
-- `request_timeout`: Specify how long (in milliseconds) to wait for initial data from the inbound Stream. `0` means do not wait for initial data, and establish outbound connections immediately. This option does not apply to Datagram Sessions. See [Details](#details) for more information.
+- `request_timeout` (optional, defaults to `100`): Specify how long (in milliseconds) to wait for initial data from the inbound Stream. `0` means do not wait for initial data, and establish outbound connections immediately. This option does not apply to Datagram Sessions. See [Details](#details) for more information.
 - `tcp_next`: Descriptor of the Stream Outbound to establish new outbound Streams.
 - `udp_next`: Descriptor of the Datagram Session Outbound to establish new outbound Datagram Sessions.
 
