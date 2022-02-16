@@ -24,6 +24,4 @@ No access point is provided. This plugin should be used as entry plugin.
 
 `ip-stack` is similar to `tun2socks`. It encapsulates Streams and Datagram Sessions from raw IP packets flow through the underlying TUN interface.
 
-## Note
-
-Currently the endpoint IPv4 address is a hardcoded value `192.168.3.1`. IPv6 packets are discarded.
+> Currently the endpoint IPv4 address is a hardcoded value `192.168.3.1`. IPv6 packets are discarded.
