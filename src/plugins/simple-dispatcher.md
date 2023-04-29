@@ -17,11 +17,11 @@ Match the source/dest address against a list of simple rules, and use the corres
     {
       "is_udp": true,
       "src": {
-        "ip_ranges": [[0, [0, 0, 0, 0]]],
+        "ip_ranges": ["0.0.0.0/0"],
         "port_ranges": [{ "start": 0, "end": 65535 }]
       },
       "dst": {
-        "ip_ranges": [[32, [11, 16, 1, 1]]],
+        "ip_ranges": ["11.16.1.1/32"],
         "port_ranges": [{ "start": 53, "end": 53 }]
       },
       "next": "fakeip-dns-server.udp"
@@ -35,9 +35,7 @@ Match the source/dest address against a list of simple rules, and use the corres
 - `rules`: List of rules.
     - `rules[].is_udp`: Specify whether the rule applies to Datagram Sessions or Streams.
     - `rules[].src`: Specify the source address and port.
-        - `rules[].src.ip_ranges`: List of IP ranges.
-            - `rules[].src.ip_ranges[][0]`: Prefix length.
-            - `rules[].src.ip_ranges[][1]`: IP address, in array format.
+        - `rules[].src.ip_ranges`: List of IP ranges in [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) format.
         - `rules[].src.port_ranges`: List of port ranges.
             - `rules[].src.port_ranges[].start`: Start port, inclusive.
             - `rules[].src.port_ranges[].end`: End port, inclusive.
@@ -47,3 +45,7 @@ Match the source/dest address against a list of simple rules, and use the corres
 ## Note
 
 `simple-dispatcher` matches all the rules sequentially, therefore not suitable for large number of rules.
+
+## Revision History
+
+- 2023-04-29: Use human representation for IP CIDR.

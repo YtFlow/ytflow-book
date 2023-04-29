@@ -15,17 +15,17 @@
  │          ├────►│               ├────►│              ├────►│           │
  └──────────┘     └───────────────┘     └──────────────┘     └────┬──────┘
                                                                   │
-                                        ┌──────────────┐          │
-                                        │              │          │
-                                        │ sys-resolver │          │ tcp
-                                        │              │          │
-                                        └───▲──────────┘          │
-                                            │ resolver            │
-                            ┌─────┐       ┌─┴──────────┐   ┌──────▼──────┐
-                            │     │       │            │   │             │
-                            │ phy │ netif │ phy-socket │   │ proxy-redir │
-                            │     │◄──────┤            │◄──┤             │
-                            └─────┘       └────────────┘   └─────────────┘
+                                      ┌──────────────┐            │
+                                      │              │            │
+                                      │ sys-resolver │            │ tcp
+                                      │              │            │
+                                      └───▲──────────┘            │
+                                          │ resolver              │
+                                        ┌─┴──────────┐     ┌──────▼──────┐
+                                        │            │     │             │
+                                        │ phy-socket │ tcp │ proxy-redir │
+                                        │            │◄────┤             │
+                                        └────────────┘     └─────────────┘
 
 ```
 
@@ -78,20 +78,12 @@
 - `phy-socket` ([`socket`](../plugins/socket.md))
 ```json
 {
-  "netif": "phy.netif",
   "resolver": "sys-resolver.resolver"
 }
 ```
 - `sys-resolver` ([`system-resolver`](../plugins/system-resolver.md))
 ```json
 null
-```
-- `phy` ([`netif`](../plugins/netif.md))
-```json
-{
-  "family_preference": "NoPreference",
-  "type": "Auto"
-}
 ```
 - `reject` ([`reject`](../plugins/reject.md))
 ```json
@@ -110,3 +102,7 @@ null
 4. Since `ss-client` has encoded the destination address into the Shadowsocks protocol, `proxy-redir` will redirect the connection to the proxy address (`my.proxy.server.com.:8388`). Otherwise, encrypted Shadowsocks payload will be sent directly to `google.com:443`, which is not expected.
 5. `phy-socket` resolves the IP address of `my.proxy.server.com.` using a [`system-resolver`](../plugins/system-resolver.md).
 6. The Shadowsocks server at `my.proxy.server.com.:8388` receives the request and starts relay between `google.com:443` and your PC.
+
+## Revision History
+
+- 2023-04-29: Removed `phy`.

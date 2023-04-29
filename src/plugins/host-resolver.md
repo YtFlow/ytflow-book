@@ -4,7 +4,7 @@ Resolve real IP addresses by querying DNS servers.
 
 ## Access Points
 
-- `resolver`: Resolver. Resolve domain names to real IP addresses, and map recent results back to domain names on a best-effort basis.
+- `resolver`: Resolver. Resolve domain names to real IP addresses.
 
 ## Parameters
 
@@ -21,3 +21,7 @@ Resolve real IP addresses by querying DNS servers.
 ## Details
 
 The `host-resolver` plugin is powered by [`trust_dns_resolver`](https://docs.rs/trust-dns-resolver/latest/trust_dns_resolver/).
+
+## Revision History
+
+- 2023-04-29: Removed `map_back` related content.

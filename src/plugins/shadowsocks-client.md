@@ -5,8 +5,7 @@ Shadowsocks client.
 ## Access Points
 
 - `tcp`: Stream Outbound.
-
-*The UDP protocol is not implemented as of YtFlowCore 0.1.*
+- `udp`: Datagram Session Outbound.
 
 ## Parameters
 
@@ -43,3 +42,7 @@ Shadowsocks client.
 - `password`: Specify the password to generate encryption keys.
 - `tcp_next`: Descriptor of the Stream Outbound to establish new outbound Streams.
 - `udp_next`: Descriptor of the Datagram Session Outbound to establish new outbound Datagram Sessions.
+
+## Revision History
+
+- 2023-04-29: Added `udp` access point.

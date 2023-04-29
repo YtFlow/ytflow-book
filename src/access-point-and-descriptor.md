@@ -22,7 +22,7 @@ In YtFlowCore, a TCP connection is represented by a Stream. A plugin that work w
 
 A Stream Handler *handles* streams. When a Stream is produced by an upstream plugin, it is passed to the Stream Handler. The Stream Handler may do some I/O, wrap a new Stream around it, pass it to a downstream Stream Handler, or even terminate the Stream. Stream Handlers are often used on the inbound side.
 
-A Stream Outbound works the other way around. It *produces* streams. An upstream plugin asks the Stream Outbound for a new Stream upon request. Then, the Stream Outbound creates a new Stream, or reuses a Stream from a downstream Stream Outbound, and returns it to the upstream plugin. Stream Outbounds are often used on the outbound side.
+A Stream Outbound works the other way around. It *initiates* streams. An upstream plugin asks the Stream Outbound for a new Stream upon request. Then, the Stream Outbound creates a new Stream, or reuses a Stream from a downstream Stream Outbound, and returns it to the upstream plugin. Stream Outbounds are often used on the outbound side.
 
 To exchange data from two Streams, a [`forward`] plugin is used. It exposes a Stream Handler and requires a Stream Outbound to work. When a Stream is received from the Stream Handler access point, the plugin requests a new Stream from the Stream Outbound, and then forwards data between the two streams. Note that [`forward`] only forwards data, and does nothing about outbound selection, routing or DNS resolution.
 
@@ -40,10 +40,6 @@ A Resolver can be used to fulfill requests related to domain names, such as reso
 
 A TUN is used to send and receive Layer 3 Raw IP packets. Currently, only [`ip-stack`](./plugins/ip-stack.md) requires a TUN to extract Streams and Datagram Sessions.
 
-### Netif
-
-A Netif access point provides information for a [`socket`] plugin to bind to a specific network interface.
-
 ## Descriptor
 
 Descriptors are used to locate access points. Usually, it is the combination of a plugin name and a predefined short string, separated by a dot. For example, `trojan-outbound.tcp` may refer to the Stream Outbound access point of a [`trojan-client`](./plugins/trojan-client.md) plugin called `trojan-outbound`.
@@ -52,3 +48,7 @@ Moreover, a descriptor may refer to an access point with different types. For ex
 
 [`forward`]: ./plugins/forward.md
 [`socket`]: ./plugins/socket.md
+
+## Revision History
+
+- 2023-04-29: Removed Netif.

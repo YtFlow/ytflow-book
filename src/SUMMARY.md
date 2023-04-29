@@ -11,6 +11,7 @@
     - [VPN with DLC-based Split Routing]()
 - [Plugins](./plugins.md)
     - [dns-server](./plugins/dns-server.md)
+    - [dyn-outbound](./plugins/dyn-outbound.md)
     - [fake-ip](./plugins/fake-ip.md)
     - [forward](./plugins/forward.md)
     - [host-resolver](./plugins/host-resolver.md)
