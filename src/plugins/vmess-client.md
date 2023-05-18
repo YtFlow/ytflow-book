@@ -14,7 +14,7 @@ VMess client.
 {
   "user_id": "b831381d-6324-4d53-ad4f-8cda48b30811",
   "security": "auto",
-  "alter_id": "0",
+  "alter_id": 0,
   "tcp_next": "proxy-redir.tcp"
 }
 ```
@@ -45,3 +45,4 @@ The following request options are not supported:
 ## Revision History
 
 - 2023-05-11: Added `vmess-client`.
+- 2023-05-18: Fixed data type for `alter_id`.
