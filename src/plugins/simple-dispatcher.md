@@ -4,8 +4,8 @@ Match the source/dest address against a list of simple rules, and use the corres
 
 ## Access Points
 
-- `tcp`: Stream Outbound.
-- `udp`: Datagram Session Outbound. Dispatching applies to Datagram Sessions only. Datagrams flowing through are not inspected.
+- `tcp`: Stream Handler.
+- `udp`: Datagram Session Handler. Dispatching applies to Datagram Sessions only. Datagrams flowing through are not inspected.
 
 ## Parameters
 
@@ -30,8 +30,8 @@ Match the source/dest address against a list of simple rules, and use the corres
 }
 ```
 
-- `fallback_tcp`: Descriptor of the Stream Outbound to establish new outbound Streams when none of the rules matches.
-- `fallback_udp`: Descriptor of the Datagram Session Outbound to establish new outbound Datagram Sessions when none of the rules matches.
+- `fallback_tcp`: Descriptor of the Stream Handler to handle Streams when none of the rules matches.
+- `fallback_udp`: Descriptor of the Datagram Session Handler to handle Datagram Sessions when none of the rules matches.
 - `rules`: List of rules.
     - `rules[].is_udp`: Specify whether the rule applies to Datagram Sessions or Streams.
     - `rules[].src`: Specify the source address and port.
@@ -44,8 +44,10 @@ Match the source/dest address against a list of simple rules, and use the corres
 
 ## Note
 
-`simple-dispatcher` matches all the rules sequentially, therefore not suitable for large number of rules.
+For large number of rules, `simple-dispatcher` may not be efficient as it matches all the rules sequentially. In this case, consider using [`rule-dispatcher`](./rule-dispatcher.md) instead. 
 
 ## Revision History
 
 - 2023-04-29: Use human representation for IP CIDR.
+- 2023-06-05: Fixed access points, `fallback_tcp`, `fallback_udp` types.
+- 2023-06-05: Add recommendation for `rule-dispatcher`.

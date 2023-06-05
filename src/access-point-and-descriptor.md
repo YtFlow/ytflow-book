@@ -4,7 +4,7 @@ An access point is like a "listening port" of a plugin. A plugin can expose acce
 
 ## Types of Access Point
 
-Access points are typed, which means you cannot arbitrarily connect a plugin to an access point. Currently, there are 7 types of access points:
+Access points are typed, which means you cannot arbitrarily connect a plugin to an access point. Currently, there are 6 types of access points:
 
 - Stream Handler
 - Datagram Session Handler
@@ -12,7 +12,6 @@ Access points are typed, which means you cannot arbitrarily connect a plugin to 
 - Datagram Session Outbound
 - Resolver
 - TUN
-- Netif
 
 We will discuss these types and explain why they are categorized as such in the following sections.
 
@@ -52,3 +51,4 @@ Moreover, a descriptor may refer to an access point with different types. For ex
 ## Revision History
 
 - 2023-04-29: Removed Netif.
+- 2023-06-05: Removed Netif in Access Point list.

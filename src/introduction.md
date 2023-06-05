@@ -8,9 +8,11 @@ To achieve maximum flexibility, the plugins are designed with [KISS principle](h
 - A FakeIP DNS resolver, providing fake IP addresses and corresponding domain names, and
 - A DNS server, acting as 'FakeDNS', and responsible for translating mapped FakeIPs back into domain names from incoming connections.
 
-These plugins are fully configurable, and work intuitively in your profile. Let's say you want to implement split routing based on countries/regions of destination addresses[^geoip]. In order to lookup geolocations from the database, you will need a real-IP DNS resolver to get IP addresses associated with domain names. You may ask, "will the real-IP DNS resolver mess up with the FakeIP one?" The answer is, no. In this profile, a destination address will only be overwritten by the destination resolver, while DNS resolvers do no change the destination address. You will learn more about plugins in [Chapter 4](./plugins.md).
+These plugins are fully configurable, and work intuitively in your profile. Let's say you want to implement split routing based on countries/regions of destination addresses using [`rule-dispatcher`](./plugins/rule-dispatcher.md). In order to lookup geolocations from the database, you will need a real-IP DNS resolver to get IP addresses associated with domain names. You may ask, "will the real-IP DNS resolver mess up with the FakeIP one?" The answer is, no. In this profile, a destination address will only be overwritten by the destination resolver, while DNS resolvers do no change the destination address. You will learn more about plugins in [Chapter 4](./plugins.md).
 
 [YtFlowCore]: https://github.com/YtFlow/YtFlowCore
 [YtFlowApp]: https://github.com/YtFlow/YtFlowApp
 
-[^geoip]: There should be a plugin called `geoip-dispatcher` to achieve that, but it has not been implemented in [YtFlowCore].
+## Revision History
+
+- 2023-06-05: Added link to `rule-dispatcher`.
