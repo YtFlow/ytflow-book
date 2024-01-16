@@ -26,12 +26,13 @@ TLS client stream.
 
 The following plugins are [ALPN]-aware:
 
-- [`ws-client`](./ws-client.md): `http/1.1` only
+- [`ws-client`](./ws-client.md): `http/2` and `http/1.1` auto adaptive
 - [`host-resolver`](./host-resolver.md): `h2` and `http/1.1` for DNS-over-HTTPS endpoints
 
 ## Revision History
 
 - 2023-05-10: Added `alpn`.
 - 2023-06-05: Specify auto-inferred `alpn`.
+- 2024-01-16: Update `ws-client` with `http/2` support
 
 [ALPN]: https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation
