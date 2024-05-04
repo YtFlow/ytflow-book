@@ -1,0 +1,1479 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>YtFlowCore Book</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="basics.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="profile-and-plugin.html"><strong aria-hidden="true">2.1.</strong> Profile and Plugin</a></li><li class="chapter-item expanded "><a href="access-point-and-descriptor.html"><strong aria-hidden="true">2.2.</strong> Access Point and Descriptor</a></li></ol></li><li class="chapter-item expanded "><a href="recipes.html"><strong aria-hidden="true">3.</strong> Recipes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="recipies/classic-proxy-client.html"><strong aria-hidden="true">3.1.</strong> Classic Proxy Client</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> VPN Proxy Client</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> VPN with DLC-based Split Routing</div></li></ol></li><li class="chapter-item expanded "><a href="plugins.html"><strong aria-hidden="true">4.</strong> Plugins</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/dns-server.html"><strong aria-hidden="true">4.1.</strong> dns-server</a></li><li class="chapter-item expanded "><a href="plugins/dyn-outbound.html"><strong aria-hidden="true">4.2.</strong> dyn-outbound</a></li><li class="chapter-item expanded "><a href="plugins/fake-ip.html"><strong aria-hidden="true">4.3.</strong> fake-ip</a></li><li class="chapter-item expanded "><a href="plugins/forward.html"><strong aria-hidden="true">4.4.</strong> forward</a></li><li class="chapter-item expanded "><a href="plugins/host-resolver.html"><strong aria-hidden="true">4.5.</strong> host-resolver</a></li><li class="chapter-item expanded "><a href="plugins/http-obfs-client.html"><strong aria-hidden="true">4.6.</strong> http-obfs-client</a></li><li class="chapter-item expanded "><a href="plugins/http-obfs-server.html"><strong aria-hidden="true">4.7.</strong> http-obfs-server</a></li><li class="chapter-item expanded "><a href="plugins/http-proxy-client.html"><strong aria-hidden="true">4.8.</strong> http-proxy-client</a></li><li class="chapter-item expanded "><a href="plugins/ip-stack.html"><strong aria-hidden="true">4.9.</strong> ip-stack</a></li><li class="chapter-item expanded "><a href="plugins/list-dispatcher.html"><strong aria-hidden="true">4.10.</strong> list-dispatcher</a></li><li class="chapter-item expanded "><a href="plugins/netif.html"><strong aria-hidden="true">4.11.</strong> netif</a></li><li class="chapter-item expanded "><a href="plugins/null.html"><strong aria-hidden="true">4.12.</strong> null</a></li><li class="chapter-item expanded "><a href="plugins/redirect.html"><strong aria-hidden="true">4.13.</strong> redirect</a></li><li class="chapter-item expanded "><a href="plugins/reject.html"><strong aria-hidden="true">4.14.</strong> reject</a></li><li class="chapter-item expanded "><a href="plugins/resolve-dest.html"><strong aria-hidden="true">4.15.</strong> resolve-dest</a></li><li class="chapter-item expanded "><a href="plugins/rule-dispatcher.html"><strong aria-hidden="true">4.16.</strong> rule-dispatcher</a></li><li class="chapter-item expanded "><a href="plugins/shadowsocks-client.html"><strong aria-hidden="true">4.17.</strong> shadowsocks-client</a></li><li class="chapter-item expanded "><a href="plugins/simple-dispatcher.html"><strong aria-hidden="true">4.18.</strong> simple-dispatcher</a></li><li class="chapter-item expanded "><a href="plugins/socket.html"><strong aria-hidden="true">4.19.</strong> socket</a></li><li class="chapter-item expanded "><a href="plugins/socket-listener.html"><strong aria-hidden="true">4.20.</strong> socket-listener</a></li><li class="chapter-item expanded "><a href="plugins/socks5-client.html"><strong aria-hidden="true">4.21.</strong> socks5-client</a></li><li class="chapter-item expanded "><a href="plugins/socks5-server.html"><strong aria-hidden="true">4.22.</strong> socks5-server</a></li><li class="chapter-item expanded "><a href="plugins/switch.html"><strong aria-hidden="true">4.23.</strong> switch</a></li><li class="chapter-item expanded "><a href="plugins/system-resolver.html"><strong aria-hidden="true">4.24.</strong> system-resolver</a></li><li class="chapter-item expanded "><a href="plugins/tls-client.html"><strong aria-hidden="true">4.25.</strong> tls-client</a></li><li class="chapter-item expanded "><a href="plugins/tls-obfs-client.html"><strong aria-hidden="true">4.26.</strong> tls-obfs-client</a></li><li class="chapter-item expanded "><a href="plugins/trojan-client.html"><strong aria-hidden="true">4.27.</strong> trojan-client</a></li><li class="chapter-item expanded "><a href="plugins/vmess-client.html"><strong aria-hidden="true">4.28.</strong> vmess-client</a></li><li class="chapter-item expanded "><a href="plugins/vpn-tun.html"><strong aria-hidden="true">4.29.</strong> vpn-tun</a></li><li class="chapter-item expanded "><a href="plugins/ws-client.html"><strong aria-hidden="true">4.30.</strong> ws-client</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Internal</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">YtFlowCore Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="preface"><a class="header" href="#preface">Preface</a></h1>
+<p>The YtFlowCore Book is prepared for those who want to customize their <a href="https://github.com/YtFlow/YtFlowCore">YtFlowCore</a> (or its UI front ends like <a href="https://github.com/YtFlow/YtFlowApp">YtFlowApp</a>) Profiles.</p>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<p>To edit YtFlow profiles, you may need a dedicated editor. <a href="https://github.com/YtFlow/YtFlowApp">YtFlowApp</a> has a built-in configuration editor. The <code>ytflow-edit</code> <a href="https://en.wikipedia.org/wiki/Text-based_user_interfaces">TUI</a> tool from <a href="https://github.com/YtFlow/YtFlowCore">YtFlowCore</a> also works.</p>
+<p>Although we are trying to minimize necessary prior knowledge, understanding of network fundamentals can greatly improve your experience while exploring YtFlow. You are not expected to be a network expert (while some of you already are) to get started, as long as you can tell the difference between TCP and UDP.</p>
+<p>Since we present plugin parameters with JSON, you will need to get familiar with the JSON format. Can you spot a mistake in this JSON document?</p>
+<pre><pre class="playground"><code class="language-rust edition2021"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use serde_json::{from_str, Value};
+</span><span class="boring">let s = r#&quot;
+</span>{
+    &quot;host&quot;: &quot;localhost&quot;,
+    &quot;port&quot;: 1080,
+    &quot;password&quot;: &quot;password&quot;,
+    &quot;tcp_next&quot;: &quot;socket&quot;,
+}
+<span class="boring">&quot;#;
+</span><span class="boring">println!(&quot;{:?}&quot;, from_str::&lt;Value&gt;(&amp;s[1..]));
+</span><span class="boring">}</span></code></pre></pre>
+<h2 id="about-this-book"><a class="header" href="#about-this-book">About This Book</a></h2>
+<p>The YtFlowCore Book is open source and available at <a href="https://github.com/YtFlow/ytflow-book">GitHub</a>. Feel free to contribute by submitting a new issue to request clarification, or making pull requests to fix typos.</p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p><a href="https://github.com/YtFlow/YtFlowCore">YtFlowCore</a> is a modern proxy framework that allows heavy customization. You can design your own network flow by chaining plugins and tuning parameters. Expert users will find it interesting to play around with custom profiles, while novice users may choose to benefit from preset configurations that our UI front end, such as <a href="https://github.com/YtFlow/YtFlowApp">YtFlowApp</a>, has set up for you.</p>
+<p>To achieve maximum flexibility, the plugins are designed with <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS principle</a> in mind. Sometimes, you will find it cumbersome to deploy so many plugins, only to achieve something appears as a simple button in other apps. However, such explicitness avoids confusion when you debug and customize your network. For example, the FakeIP infrastructure can be decomposed into:</p>
+<ul>
+<li>A simple dispatcher that hijacks all DNS requests,</li>
+<li>A FakeIP DNS resolver, providing fake IP addresses and corresponding domain names, and</li>
+<li>A DNS server, acting as 'FakeDNS', and responsible for translating mapped FakeIPs back into domain names from incoming connections.</li>
+</ul>
+<p>These plugins are fully configurable, and work intuitively in your profile. Let's say you want to implement split routing based on countries/regions of destination addresses using <a href="./plugins/rule-dispatcher.html"><code>rule-dispatcher</code></a>. In order to lookup geolocations from the database, you will need a real-IP DNS resolver to get IP addresses associated with domain names. You may ask, &quot;will the real-IP DNS resolver mess up with the FakeIP one?&quot; The answer is, no. In this profile, a destination address will only be overwritten by the destination resolver, while DNS resolvers do no change the destination address. You will learn more about plugins in <a href="./plugins.html">Chapter 4</a>.</p>
+<h2 id="revision-history"><a class="header" href="#revision-history">Revision History</a></h2>
+<ul>
+<li>2023-06-05: Added link to <code>rule-dispatcher</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basics"><a class="header" href="#basics">Basics</a></h1>
+<p>In this chapter, we will cover basic concepts in YtFlowCore.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="profile-and-plugin"><a class="header" href="#profile-and-plugin">Profile and Plugin</a></h1>
+<p>Profile and Plugin are two core entities in YtFlow. When YtFlowCore launches, it retrieves the specified profile from the database, along with all plugins included in the profile. Then, the plugins are loaded and started to respond to incoming connections. Errors occur during parsing or loading plugins will be reported to the user. In this case, YtFlowCore may or may not reject running the profile, depending on the implementation.</p>
+<h2 id="profile"><a class="header" href="#profile">Profile</a></h2>
+<p>A profile consists of a collection of plugins that collectively defines runtime behavior of YtFlowCore. There is not too much interesting fields inside a profile itself. Instead, you may customize the network flow by modifying the plugins.</p>
+<p>Remember that a YtFlowCore instance only runs one profile at a time. If you want to switch to a different profile, you will need to restart the YtFlowCore instance, or reconnect through the UI.</p>
+<h2 id="plugin"><a class="header" href="#plugin">Plugin</a></h2>
+<p>A plugin in a profile is an atomic instance of certain functions, such as stream encoding and decoding, destination rewrite, and dispatching to different plugins. They are designed to be as small as possible, so that you can make the most of them by chaining them in a creative way.</p>
+<p>You may have already noticed that outbound client plugins, such as <a href="./plugins/shadowsocks-client.html"><code>shadowsocks-client</code></a> and <a href="./plugins/socks5-client.html"><code>socks5-client</code></a>, care nothing about which address or port your proxy server is running on. They only encode  destination addresses into the streams, but do not change the destination. To redirect all streams to the proxy server, you will need a <a href="./plugins/redirect.html"><code>redirect</code></a> plugin.</p>
+<blockquote>
+<p>Note that plugins are a integrated part of YtFlowCore. Currently, there is no such mechanism to dynamically load a new type of plugin from a shared library.</p>
+</blockquote>
+<h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
+<p>To customize a plugin, you modify the parameters of it. For each plugin, the parameters are encoded in a <a href="https://cbor.io/">CBOR</a> object. You don't have to know what <a href="https://cbor.io/">CBOR</a> exactly is, because the editor will automatically convert <a href="https://cbor.io/">CBOR</a> to JSON and vice versa. Sometimes you will see such object in the editor:</p>
+<pre><code class="language-json">{
+  &quot;__byte_repr&quot;: &quot;utf8&quot;,
+  &quot;data&quot;: &quot;my_trojan_password&quot;
+}
+</code></pre>
+<p>Don't be scared. Most of the time, you can treat them as strings with content of the <code>data</code> field. You see this because the editor encountered a binary buffer field, which may possibly contain non-UTF-8 data. In this case, the actual data is displayed in <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> format.</p>
+<pre><code class="language-json">{
+    &quot;__byte_repr&quot;: &quot;base64&quot;,
+    &quot;data&quot;: &quot;3q2+7w==&quot;
+}
+</code></pre>
+<p>A plugin can have many access points. Plugins chain to each other by specifying names and access points of other plugins in its parameters.</p>
+<h3 id="entry-plugin"><a class="header" href="#entry-plugin">Entry Plugin</a></h3>
+<p>Some plugins like <a href="./plugins/socket-listener.html"><code>socket-listener</code></a> and <a href="./plugins/stack.html"><code>ip-stack</code></a> are made to work as entry plugins. They are supposed to be the entry points of the whole profile, and therefore do not provide any access point.</p>
+<p>In the editor, you can set a plugin as entry plugin, or unset to deactivate it. There can be multiple entry plugins in a profile. Note that every plugin can be an entry plugin, but most plugins will have no effect at runtime.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="access-point-and-descriptor"><a class="header" href="#access-point-and-descriptor">Access Point and Descriptor</a></h1>
+<p>An access point is like a &quot;listening port&quot; of a plugin. A plugin can expose access points for other plugins to connect to, and connect to access points of other plugins as well. A descriptor specifies the plugin name and the access point that a plugin connects to.</p>
+<h2 id="types-of-access-point"><a class="header" href="#types-of-access-point">Types of Access Point</a></h2>
+<p>Access points are typed, which means you cannot arbitrarily connect a plugin to an access point. Currently, there are 6 types of access points:</p>
+<ul>
+<li>Stream Handler</li>
+<li>Datagram Session Handler</li>
+<li>Stream Outbound</li>
+<li>Datagram Session Outbound</li>
+<li>Resolver</li>
+<li>TUN</li>
+</ul>
+<p>We will discuss these types and explain why they are categorized as such in the following sections.</p>
+<h3 id="streams-stream-handler-and-stream-outbound"><a class="header" href="#streams-stream-handler-and-stream-outbound">Streams, Stream Handler and Stream Outbound</a></h3>
+<p>In YtFlowCore, a TCP connection is represented by a Stream. A plugin that work with TCP streams can implement a new Stream on top of an underlying Stream to receive and send protocol headers (e.g. <a href="https://en.wikipedia.org/wiki/SOCKS">SOCKS5</a>), or to encrypt and decrypt data (e.g. <a href="https://en.wikipedia.org/wiki/Shadowsocks">Shadowsocks</a>).</p>
+<p>A Stream Handler <em>handles</em> streams. When a Stream is produced by an upstream plugin, it is passed to the Stream Handler. The Stream Handler may do some I/O, wrap a new Stream around it, pass it to a downstream Stream Handler, or even terminate the Stream. Stream Handlers are often used on the inbound side.</p>
+<p>A Stream Outbound works the other way around. It <em>initiates</em> streams. An upstream plugin asks the Stream Outbound for a new Stream upon request. Then, the Stream Outbound creates a new Stream, or reuses a Stream from a downstream Stream Outbound, and returns it to the upstream plugin. Stream Outbounds are often used on the outbound side.</p>
+<p>To exchange data from two Streams, a <a href="./plugins/forward.html"><code>forward</code></a> plugin is used. It exposes a Stream Handler and requires a Stream Outbound to work. When a Stream is received from the Stream Handler access point, the plugin requests a new Stream from the Stream Outbound, and then forwards data between the two streams. Note that <a href="./plugins/forward.html"><code>forward</code></a> only forwards data, and does nothing about outbound selection, routing or DNS resolution.</p>
+<h3 id="datagram-sessions-datagram-session-handler-and-datagram-session-outbound"><a class="header" href="#datagram-sessions-datagram-session-handler-and-datagram-session-outbound">Datagram Sessions, Datagram Session Handler and Datagram Session Outbound</a></h3>
+<p>As you may have guessed, Datagram Session is the UDP counterpart of Stream. A Datagram Session represents a UDP receipient, to which a plugin can send or receive datagrams.</p>
+<p>Datagram Session Handler and Datagram Session Outbound work the same way as Stream Handler and Stream Outbound, but they deal with Datagram Sessions. <a href="./plugins/forward.html"><code>forward</code></a> is also used to forward datagrams between two Datagram Sessions.</p>
+<h3 id="resolver"><a class="header" href="#resolver">Resolver</a></h3>
+<p>A Resolver can be used to fulfill requests related to domain names, such as resolving domain names to/from IP addresses, or possibly other type of requests like <a href="https://en.wikipedia.org/wiki/TXT_record">TXT</a> or <a href="https://en.wikipedia.org/wiki/SRV_record">SRV</a>. The requests and responses use internal representations, thus a Resolver does not necessarily work with raw DNS payloads directly. Rather, a <a href="./plugins/dns-server.html"><code>dns-server</code></a> should be used to serve DNS messages and <a href="./plugins/host-resolver.html"><code>host-resolver</code></a> should be used to send requests to a real DNS server.</p>
+<h3 id="tun"><a class="header" href="#tun">TUN</a></h3>
+<p>A TUN is used to send and receive Layer 3 Raw IP packets. Currently, only <a href="./plugins/ip-stack.html"><code>ip-stack</code></a> requires a TUN to extract Streams and Datagram Sessions.</p>
+<h2 id="descriptor"><a class="header" href="#descriptor">Descriptor</a></h2>
+<p>Descriptors are used to locate access points. Usually, it is the combination of a plugin name and a predefined short string, separated by a dot. For example, <code>trojan-outbound.tcp</code> may refer to the Stream Outbound access point of a <a href="./plugins/trojan-client.html"><code>trojan-client</code></a> plugin called <code>trojan-outbound</code>.</p>
+<p>Moreover, a descriptor may refer to an access point with different types. For example, a <a href="./plugins/socket.html"><code>socket</code></a> plugin called <code>phy-socket</code> has a descriptor named <code>phy-socket</code>, which is both a Stream Outbound and Datagram Session Outbound.</p>
+<h2 id="revision-history-1"><a class="header" href="#revision-history-1">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed Netif.</li>
+<li>2023-06-05: Removed Netif in Access Point list.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recipes"><a class="header" href="#recipes">Recipes</a></h1>
+<p>This chapter provides a few sample profiles for common scenarios. You will develop an intuition about how YtFlowCore plugins works. The recipes can be used as a starting point to build your own network flow as well.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="classic-proxy-client"><a class="header" href="#classic-proxy-client">Classic Proxy Client</a></h1>
+<h2 id="objectives"><a class="header" href="#objectives">Objectives</a></h2>
+<ol>
+<li>Build a Shadowsocks Client with a SOCKS5 inbound, akin to the classic Shadowsocks client.</li>
+<li>Focus on TCP only.</li>
+</ol>
+<h2 id="plugins"><a class="header" href="#plugins">Plugins</a></h2>
+<pre><code>
+ ┌──────────┐     ┌───────────────┐     ┌──────────────┐     ┌───────────┐
+ │          │     │               │     │              │     │           │
+ │ listener │ tcp │ socks5-server │ tcp │ main-forward │ tcp │ ss-client │
+ │          ├────►│               ├────►│              ├────►│           │
+ └──────────┘     └───────────────┘     └──────────────┘     └────┬──────┘
+                                                                  │
+                                      ┌──────────────┐            │
+                                      │              │            │
+                                      │ sys-resolver │            │ tcp
+                                      │              │            │
+                                      └───▲──────────┘            │
+                                          │ resolver              │
+                                        ┌─┴──────────┐     ┌──────▼──────┐
+                                        │            │     │             │
+                                        │ phy-socket │ tcp │ proxy-redir │
+                                        │            │◄────┤             │
+                                        └────────────┘     └─────────────┘
+
+</code></pre>
+<ul>
+<li><code>listener</code> (<a href="recipies/../plugins/socket-listener.html"><code>socket-listener</code></a>)</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;tcp_listen&quot;: [&quot;127.0.0.1:1080&quot;],
+  &quot;udp_listen&quot;: [],
+  &quot;tcp_next&quot;: &quot;socks5-server.tcp&quot;,
+  &quot;udp_next&quot;: &quot;reject.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>socks5-server</code> (<a href="recipies/../plugins/socks5-server.html"><code>socks5-server</code></a>)</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;tcp_next&quot;: &quot;main-forward.tcp&quot;,
+  &quot;udp_next&quot;: &quot;reject.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>main-forward</code> (<a href="recipies/../plugins/forward.html"><code>forward</code></a>)</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;tcp_next&quot;: &quot;ss-client.tcp&quot;,
+  &quot;udp_next&quot;: &quot;null.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>ss-client</code> (<a href="recipies/../plugins/shadowsocks-client.html"><code>shadowsocks-client</code></a>)</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;method&quot;: &quot;aes-128-gcm&quot;,
+  &quot;password&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_ss_password&quot;
+  },
+  &quot;tcp_next&quot;: &quot;proxy-redir.tcp&quot;,
+  &quot;udp_next&quot;: &quot;null.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>proxy-redir</code> (<a href="recipies/../plugins/redirect.html"><code>redirect</code></a>)</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;dest&quot;: {
+    &quot;host&quot;: &quot;my.proxy.server.com.&quot;,
+    &quot;port&quot;: 8388
+  },
+  &quot;tcp_next&quot;: &quot;phy-socket&quot;,
+  &quot;udp_next&quot;: &quot;null.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>phy-socket</code> (<a href="recipies/../plugins/socket.html"><code>socket</code></a>)</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;resolver&quot;: &quot;sys-resolver.resolver&quot;
+}
+</code></pre>
+<ul>
+<li><code>sys-resolver</code> (<a href="recipies/../plugins/system-resolver.html"><code>system-resolver</code></a>)</li>
+</ul>
+<pre><code class="language-json">null
+</code></pre>
+<ul>
+<li><code>reject</code> (<a href="recipies/../plugins/reject.html"><code>reject</code></a>)</li>
+</ul>
+<pre><code class="language-json">null
+</code></pre>
+<ul>
+<li><code>null</code> (<a href="recipies/../plugins/null.html"><code>null</code></a>)</li>
+</ul>
+<pre><code class="language-json">null
+</code></pre>
+<h2 id="explanation"><a class="header" href="#explanation">Explanation</a></h2>
+<ol>
+<li><code>listener</code> binds to a local host endpoint and listens for incoming connections.</li>
+<li>For each incoming connection, <code>socks5-server</code> performs a SOCKS5 handshake and obtains a destination address from the SOCKS5 request, say <code>google.com:443</code>.</li>
+<li><code>main-forward</code> initiates a new connection with <code>ss-client</code>.</li>
+<li>Since <code>ss-client</code> has encoded the destination address into the Shadowsocks protocol, <code>proxy-redir</code> will redirect the connection to the proxy address (<code>my.proxy.server.com.:8388</code>). Otherwise, encrypted Shadowsocks payload will be sent directly to <code>google.com:443</code>, which is not expected.</li>
+<li><code>phy-socket</code> resolves the IP address of <code>my.proxy.server.com.</code> using a <a href="recipies/../plugins/system-resolver.html"><code>system-resolver</code></a>.</li>
+<li>The Shadowsocks server at <code>my.proxy.server.com.:8388</code> receives the request and starts relay between <code>google.com:443</code> and your PC.</li>
+</ol>
+<h2 id="revision-history-2"><a class="header" href="#revision-history-2">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed <code>phy</code>.</li>
+<li>2024-04-05: Fixed reference to <code>resolve-dest</code> in <code>proxy-redir</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="plugins-1"><a class="header" href="#plugins-1">Plugins</a></h1>
+<p>This chapter includes usages, parameters and examples of the plugins in YtFlowCore. You may scan through these descriptions, and refer back to them as a reference when you are editing a profile.</p>
+<p>Unless otherwise specified, all parameters are <strong>required</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dns-server"><a class="header" href="#dns-server">dns-server</a></h1>
+<p>Respond to DNS request messages using results returned by the specified resolver. Also provides domain name lookup (<code>map_back</code>) for resolved IP addresses.</p>
+<h2 id="access-points"><a class="header" href="#access-points">Access Points</a></h2>
+<ul>
+<li><code>udp</code>: Datagram Session Handler. DNS messages are exchanged over the Datagram Session.</li>
+<li><code>tcp_map_back.[tcp_map_back]</code>: Stream Handlers for each descriptor defined in <code>tcp_map_back</code>. Streams with IP addresses as their destinations are redirected to the corresponding domain name based on DNS resolution history.</li>
+<li><code>udp_map_back.[udp_map_back]</code>: Datagram Session Handlers for each descriptor defined in <code>udp_map_back</code>. Datagrams with IP addresses as their destinations are redirected to the corresponding domain name based on DNS resolution history.</li>
+</ul>
+<h2 id="parameters-1"><a class="header" href="#parameters-1">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;concurrency_limit&quot;: 64,
+  &quot;ttl&quot;: 60,
+  &quot;resolver&quot;: &quot;fake-ip.resolver&quot;,
+  &quot;tcp_map_back&quot;: [&quot;main-forward.tcp&quot;],
+  &quot;udp_map_back&quot;: [&quot;main-forward.udp&quot;]
+}
+</code></pre>
+<ul>
+<li><code>concurrency_limit</code>: Maximum number of DNS requests the plugin can handle at a time. Exceeding this limit will cause new requests to wait.</li>
+<li><code>ttl</code>: <a href="https://docs.rs/trust-dns-proto/0.20.4/trust_dns_proto/rr/resource/struct.Record.html#method.set_ttl">Time-to-live</a> (TTL) of DNS responses.</li>
+<li><code>resolver</code>: Descriptor of the Resolver to query DNS records.</li>
+<li><code>tcp_map_back</code>: List of descriptors of Stream Handlers. Each descriptor specified here will become an access point of the plugin (e.g. <code>tcp_map_back.main-forward.tcp</code>), using which a stream with an IP address as its destination can be redirected to the corresponding domain name based on DNS resolution history, and passed down to the specified access point.</li>
+<li><code>udp_map_back</code>: List of descriptors of Datagram Session Handlers. Each descriptor specified here will become an access point of the plugin (e.g. <code>udp_map_back.main-forward.udp</code>), using which a datagram with an IP address as its destination can be redirected to the corresponding domain name based on DNS resolution history, and passed down to the specified access point.</li>
+</ul>
+<h2 id="revision-history-3"><a class="header" href="#revision-history-3">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Added <code>map_back</code> related content.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dyn-outbound"><a class="header" href="#dyn-outbound">dyn-outbound</a></h1>
+<p>Select an outbound proxy from the database at runtime.</p>
+<blockquote>
+<p>This plugin requires a database file to work. If a database file is not provided, it will fail to load.</p>
+</blockquote>
+<h2 id="access-points-1"><a class="header" href="#access-points-1">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound.</li>
+<li><code>udp</code>: Datagram Session Outbound.</li>
+</ul>
+<h2 id="parameters-2"><a class="header" href="#parameters-2">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;tcp_next&quot;: &quot;ss-client.tcp&quot;,
+  &quot;udp_next&quot;: &quot;null.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound for proxies to establish new outbound Streams.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Outbound for proxies to establish new outbound Datagram Sessions.</li>
+</ul>
+<h2 id="details"><a class="header" href="#details">Details</a></h2>
+<p>Proxies in the database are managed by the UI application. During runtime, a user can select a proxy from the UI via RPC. The selection will be stored in the database so that the plugin will automatically load the selected proxy on next startup.</p>
+<p>If a selected proxy cannot be loaded during plugin initialization, all incoming connections will be rejected until another proxy is selected and loaded successfully.</p>
+<h2 id="revision-history-4"><a class="header" href="#revision-history-4">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Added <code>dyn-outbound</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fake-ip"><a class="header" href="#fake-ip">fake-ip</a></h1>
+<p>Assign a fake IP address for each domain name. This is useful for TUN inbounds where incoming connections carry no information about domain names.</p>
+<h2 id="access-points-2"><a class="header" href="#access-points-2">Access Points</a></h2>
+<ul>
+<li><code>resolver</code>: Resolver. Resolve domain names to fake IP addresses.</li>
+</ul>
+<h2 id="parameters-3"><a class="header" href="#parameters-3">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;prefix_v4&quot;: [11, 17],
+  &quot;prefix_v6&quot;: [38, 12, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  &quot;fallback&quot;: &quot;real-ip.resolver&quot;
+}
+</code></pre>
+<ul>
+<li><code>prefix_v4</code>: Specify the first two bytes of the fake IPv4 addresses. For <code>prefix_v4: [11, 17]</code>, the first IPv4 address to assign will be <code>11.17.0.1</code>.</li>
+<li><code>prefix_v6</code>: Specify the first 14 bytes of the fake IPv6 addresses. For <code>prefix_v6: [38, 12, 32, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]</code>, the first IPv6 address to assign will be <code>260c:2001::1:1</code>.</li>
+<li><code>fallback</code>: Descriptor of the fallback Resolver. Used to retrieve other types of Resource Records such as SRV and TXT. <em>Not used as of YtFlowCore version 0.1.</em></li>
+</ul>
+<h2 id="revision-history-5"><a class="header" href="#revision-history-5">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed <code>map_back</code> related content.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="forward"><a class="header" href="#forward">forward</a></h1>
+<p>Establish a new connection for each incoming connection, and forward data between them.</p>
+<h2 id="access-points-3"><a class="header" href="#access-points-3">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler. Forward data between incoming Streams and newly established outbound Streams.</li>
+<li><code>udp</code>: UDP Stream Handler. Forward datagrams between incoming Datagram Sessions and newly established outbound Datagram Sessions.</li>
+</ul>
+<h2 id="parameters-4"><a class="header" href="#parameters-4">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;request_timeout&quot;: 200,
+  &quot;tcp_next&quot;: &quot;ss-client.tcp&quot;,
+  &quot;udp_next&quot;: &quot;ss-client.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>request_timeout</code> (optional, defaults to <code>100</code>): Specify how long (in milliseconds) to wait for initial data from the inbound Stream. <code>0</code> means do not wait for initial data, and establish outbound connections immediately. This option does not apply to Datagram Sessions. See <a href="plugins/forward.html#details">Details</a> for more information.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound to establish new outbound Streams.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Outbound to establish new outbound Datagram Sessions.</li>
+</ul>
+<h2 id="details-1"><a class="header" href="#details-1">Details</a></h2>
+<p>To enable potential 0-RTT capability for the entire outbound link, <code>forward</code> plugin tries reading some data from the inbound Stream before establishing an outbound Stream, and pass the data all the way to downstream Stream Outbounds. Thus, downstream plugins can take advantage of TLS 1.3 0-RTT or TCP Fast Open features. In most cases, this is OK because common Layer 7 protocols like HTTP or TLS send request data immediately after establishing a connection.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="host-resolver"><a class="header" href="#host-resolver">host-resolver</a></h1>
+<p>Resolve real IP addresses by querying DNS servers.</p>
+<h2 id="access-points-4"><a class="header" href="#access-points-4">Access Points</a></h2>
+<ul>
+<li><code>resolver</code>: Resolver. Resolve domain names to real IP addresses.</li>
+</ul>
+<h2 id="parameters-5"><a class="header" href="#parameters-5">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;udp&quot;: [&quot;redir-8888.udp&quot;, &quot;redir-8844.udp&quot;],
+  &quot;tcp&quot;: [&quot;redir-8888.tcp&quot;, &quot;redir-8844.tcp&quot;],
+  &quot;doh&quot;: [{
+    &quot;url&quot;: &quot;https://1.1.1.1/dns-query&quot;,
+    &quot;next&quot;: &quot;tls-client.tcp&quot;
+  }]
+}
+</code></pre>
+<ul>
+<li><code>udp</code>: Descriptor of the Datagram Session Outbounds to send DNS requests.</li>
+<li><code>tcp</code>: Descriptor of the Stream Outbounds to send DNS requests. <em>Not used as of YtFlowCore 0.1.</em></li>
+<li><code>doh</code> (optional): Descriptors of <a href="https://datatracker.ietf.org/doc/html/rfc8484">RFC 8484</a> DNS-over-HTTPS endpoints
+<ul>
+<li><code>doh[].url</code>: absolute URL of the endpoint. Outbound requests (in plaintext) will be sent to this URL. For <code>https</code> URLs, a <code>tls-client</code> plugin should be present in the outbound chain specified by <code>doh[].next</code>. Cautious should be taken when using domain names in the host part, which may cause infinite loops if the outbound chain references the plugin itself. A <a href="plugins/./redirect.html"><code>redirect</code></a> plugin is not needed as the Stream destination is set to the authority part of the URL.</li>
+<li><code>doh[].next</code>: Descriptor of the Stream Outbound to establish new outbound Streams.</li>
+</ul>
+</li>
+</ul>
+<h2 id="details-2"><a class="header" href="#details-2">Details</a></h2>
+<p>The <code>host-resolver</code> plugin is powered by <a href="https://docs.rs/trust-dns-resolver/latest/trust_dns_resolver/"><code>trust_dns_resolver</code></a>.</p>
+<p>The DNS-over-HTTPS functionality is powered by <a href="https://docs.rs/hyper/latest/hyper/"><code>hyper</code></a> HTTP Client. Both <code>h2</code> and <code>http/1.1</code> are supported. <code>h2</code> will be used when selected by the lower layer <a href="plugins/./tls-client.html"><code>tls-client</code></a> plugin through <a href="https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation">ALPN</a>.</p>
+<h2 id="revision-history-6"><a class="header" href="#revision-history-6">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed <code>map_back</code> related content.</li>
+<li>2023-06-05: Added <code>doh</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="http-obfs-client"><a class="header" href="#http-obfs-client">http-obfs-client</a></h1>
+<p>simple-obfs HTTP client.</p>
+<h2 id="access-points-5"><a class="header" href="#access-points-5">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Returns a Stream handshaked with HTTP headers.</li>
+</ul>
+<h2 id="parameters-6"><a class="header" href="#parameters-6">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;host&quot;: &quot;dl.microsoft.com&quot;,
+  &quot;path&quot;: &quot;/&quot;,
+  &quot;next&quot;: &quot;proxy-redir.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>host</code>: Specify the value of <code>Host</code> HTTP header.</li>
+<li><code>path</code>: Specify the path of the HTTP request.</li>
+<li><code>next</code>: Descriptor of the Stream Outbound to perform HTTP obfuscation.</li>
+</ul>
+<h2 id="details-3"><a class="header" href="#details-3">Details</a></h2>
+<p>This plugin is compatible with <a href="https://github.com/shadowsocks/simple-obfs">simple-obfs</a>, and does not perform HTTP response checking or real WebSocket handshaking. It simply appends an HTTP request header before the Stream, and discards the response header.</p>
+<p>Example of a generated HTTP response:</p>
+<pre><code class="language-http">GET / HTTP/1.1
+Host: dl.microsoft.com
+User-Agent: curl/7.5.0
+Upgrade: websocket
+Connection: Upgrade
+Sec-Websocket-Key: b7ZPFMiCJm6AZJ3dPx9OcQ==
+Content-Length: 233
+
+[233 bytes payload]
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="http-obfs-server"><a class="header" href="#http-obfs-server">http-obfs-server</a></h1>
+<p>simple-obfs HTTP server.</p>
+<h2 id="access-points-6"><a class="header" href="#access-points-6">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler. Consumes an HTTP request from a Stream and reply with an HTTP response.</li>
+</ul>
+<h2 id="parameters-7"><a class="header" href="#parameters-7">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;next&quot;: &quot;forward.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>next</code>: Descriptor of the Stream Handler to consume the Stream handshaked with HTTP headers.</li>
+</ul>
+<h2 id="details-4"><a class="header" href="#details-4">Details</a></h2>
+<p>This plugin is compatible with <a href="https://github.com/shadowsocks/simple-obfs">simple-obfs</a>. It extracts the value of <code>Sec-Websocket-Key</code> from HTTP request headers and replies with HTTP response headers. It does not perform real WebSocket handshaking.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="http-proxy-client"><a class="header" href="#http-proxy-client">http-proxy-client</a></h1>
+<p>HTTP Proxy client. Use HTTP CONNECT to connect to the proxy server.</p>
+<h2 id="access-points-7"><a class="header" href="#access-points-7">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Initiates an HTTP CONNECT request on the stream, and consumes the response.</li>
+</ul>
+<h2 id="parameters-8"><a class="header" href="#parameters-8">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;user&quot;: {
+      &quot;__byte_repr&quot;: &quot;utf8&quot;,
+      &quot;data&quot;: &quot;&quot;
+  },
+  &quot;pass&quot;: {
+      &quot;__byte_repr&quot;: &quot;utf8&quot;,
+      &quot;data&quot;: &quot;&quot;
+  },
+  &quot;tcp_next&quot;: &quot;proxy-redir.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>user</code>: Specify the user name of the credential. An empty string disables authentication.</li>
+<li><code>pass</code>: Specify the password of the credential. An empty string disables authentication.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound to send HTTP proxy requests.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ip-stack"><a class="header" href="#ip-stack">ip-stack</a></h1>
+<p>Handle TCP or UDP connections from a TUN.</p>
+<h2 id="access-points-8"><a class="header" href="#access-points-8">Access Points</a></h2>
+<p>No access point is provided. This plugin should be used as entry plugin.</p>
+<h2 id="parameters-9"><a class="header" href="#parameters-9">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;tun&quot;: &quot;uwp-vpn-tun.tun&quot;,
+  &quot;tcp_next&quot;: &quot;rev-resolver.tcp&quot;,
+  &quot;udp_next&quot;: &quot;dns-dispatcher.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>tun</code>: Descriptor of the TUN device to send and receive packets.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Handler.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Handler.</li>
+</ul>
+<h2 id="details-5"><a class="header" href="#details-5">Details</a></h2>
+<p><code>ip-stack</code> is similar to <code>tun2socks</code>. It encapsulates Streams and Datagram Sessions from raw IP packets flow through the underlying TUN interface.</p>
+<blockquote>
+<p>Currently the endpoint IPv4 address is a hardcoded value <code>192.168.3.1</code> and the endpoint IPv6 address is a hardcoded value <code>fd00::2</code>.</p>
+</blockquote>
+<h2 id="revision-history-7"><a class="header" href="#revision-history-7">Revision History</a></h2>
+<ul>
+<li>2023-06-05: Update IPv6 address.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="list-dispatcher"><a class="header" href="#list-dispatcher">list-dispatcher</a></h1>
+<p>Match the connection against a list of matchers defined in a resource, and use the handler of the action or fallback handler if there is no match.</p>
+<h2 id="access-points-9"><a class="header" href="#access-points-9">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler defined in <code>action.tcp</code> and selected by the rules, or <code>fallback.tcp</code> if none matches.</li>
+<li><code>udp</code>: Datagram Session Handler defined in <code>action</code> and selected by the rules, or <code>fallback.udp</code> if none matches. Dispatching applies to Datagram Sessions only. Datagrams flowing through are not inspected.</li>
+<li><code>resolver</code>: Resolver defined in <code>actions</code> and the requesting domain name is selected by the rules, or <code>fallback.resolver</code> if none matches.</li>
+</ul>
+<h2 id="parameters-10"><a class="header" href="#parameters-10">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;source&quot;: &quot;ad-domain-list&quot;,
+  &quot;action&quot;: {
+    &quot;tcp&quot;: &quot;reject.tcp&quot;,
+    &quot;udp&quot;: &quot;reject.udp&quot;,
+    &quot;resolver&quot;: &quot;null.resolver&quot;
+  },
+  &quot;fallback&quot;: {
+    &quot;tcp&quot;: &quot;proxy-forward.tcp&quot;,
+    &quot;udp&quot;: &quot;proxy-forward.udp&quot;,
+    &quot;resolver&quot;: &quot;fake-ip.resolver&quot;
+  }
+}
+</code></pre>
+<ul>
+<li><code>source</code>: Specify an existing ruleset or inline rules. Use a string for the name of the ruleset, or an object for inline rules. See <a href="plugins/list-dispatcher.html#rule-source">Rule Source</a> section for more details.
+<ul>
+<li><code>source.format</code>: Specify the format of the inline rules. Can be one of the following:
+<ul>
+<li><a href="plugins/list-dispatcher.html#surge-domain-set"><code>surge-domain-set</code></a></li>
+</ul>
+</li>
+<li><code>source.text</code>: An array of the lines of the inline rules, excluding line endings.</li>
+</ul>
+</li>
+<li><code>action</code>: Specify the Stream Handler, Datagram Session Handler and Resolver to use when the list matches the request.
+<ul>
+<li><code>actions.tcp</code> (optional): Descriptor of the Stream Handler to handle Streams when there is a match. If omitted, Streams will be discarded when matched.</li>
+<li><code>actions.udp</code> (optional): Descriptor of the Datagram Session Handler to handle Datagram Sessions when there is a match. If omitted, Datagram Sessions will be discarded when matched.</li>
+<li><code>actions.resolver</code> (optional): Descriptor of the Resolver to use when the requested domain name is matched by the list. If omitted, no response will be generated when matched.</li>
+</ul>
+</li>
+<li><code>fallback</code>: The action to use when no rule matches. See <code>action</code> for the format.</li>
+</ul>
+<h2 id="rule-source"><a class="header" href="#rule-source">Rule Source</a></h2>
+<p>The <code>source</code> parameter specifies the ruleset or inline rules for matching. The format can be one of the following:</p>
+<h3 id="surge-domain-set"><a class="header" href="#surge-domain-set"><code>surge-domain-set</code></a></h3>
+<p><code>surge-domain-set</code> is a line-based text format. Each line is a either a full domain name, or a domain suffix preceded by a dot (<code>.</code>).</p>
+<pre><code># This is a comment.
+.lan
+localhost.ptlogin2.qq.com
+</code></pre>
+<p>This ruleset will match <code>my-pc.lan</code>, <code>localhost.ptlogin2.qq.com</code>, but not <code>my-pc.lan.com</code> or <code>my-pc.localhost.ptlogin2.qq.com</code>.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>Use <code>system-resolver</code> for specified domains, and <code>fake-ip</code> for the rest.</p>
+<pre><code class="language-json">{
+  &quot;action&quot;: {
+    &quot;resolver&quot;: &quot;system-resolver.resolver&quot;
+  },
+  &quot;fallback&quot;: {
+    &quot;resolver&quot;: &quot;fake-ip.resolver&quot;
+  },
+  &quot;source&quot;: {
+    &quot;format&quot;: &quot;surge-domain-set&quot;,
+    &quot;text&quot;: [
+      &quot;.msftconnecttest.com&quot;,
+      &quot;.msftncsi.com&quot;,
+      &quot;.lan&quot;,
+      &quot;localhost.ptlogin2.qq.com&quot;
+    ]
+  }
+}
+</code></pre>
+<p>Reject connections to domain names listed in <code>loyalsoldier-surge-reject</code>:</p>
+<pre><code class="language-json">{
+  &quot;action&quot;: {
+    &quot;tcp&quot;: &quot;reject.tcp&quot;,
+    &quot;udp&quot;: &quot;reject.udp&quot;
+  },
+  &quot;fallback&quot;: {
+    &quot;tcp&quot;: &quot;proxy-forward.tcp&quot;,
+    &quot;udp&quot;: &quot;resolve-proxy.udp&quot;
+  },
+  &quot;source&quot;: &quot;loyalsoldier-surge-reject&quot;
+}
+</code></pre>
+<h2 id="revision-history-8"><a class="header" href="#revision-history-8">Revision History</a></h2>
+<ul>
+<li>2024-04-05: Added <code>list-dispatcher</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="netif"><a class="header" href="#netif">netif</a></h1>
+<p>A dynamic network interface.</p>
+<h2 id="access-points-10"><a class="header" href="#access-points-10">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Initiate a TCP connection bound to the selected network interface. Domain names will be resolved using <code>outbound_resolver</code> or the <code>resolver</code> of this plugin.</li>
+<li><code>udp</code>: Datagram Outbound. Send a UDP packet bound to the selected network interface. Domain names will be resolved using <code>outbound_resolver</code> or the <code>resolver</code> of this plugin. </li>
+<li><code>resolver</code>: Resolver. Resolve domain names using configuration associated with this network interface.</li>
+</ul>
+<h2 id="parameters-11"><a class="header" href="#parameters-11">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;family_preference&quot;: &quot;Ipv4Only&quot;,
+  &quot;type&quot;: &quot;Auto&quot;
+}
+</code></pre>
+<ul>
+<li><code>family_preference</code>: Specify the preferred address family. Can be one of the following (case sensitive):
+<ul>
+<li><code>Both</code></li>
+<li><code>Ipv4Only</code></li>
+<li><code>Ipv6Only</code></li>
+</ul>
+</li>
+<li><code>type</code>: Determine how to pick a network interface. Can be one of the following (case insensitive):
+<ul>
+<li><code>Auto</code>: Select a wired, physical interface if available, otherwise a wireless interface.</li>
+<li><code>Manual</code>: Select a network interface by name.</li>
+</ul>
+</li>
+<li><code>netif</code>: Specify the name of the network interface. <em>Only takes effect when <code>type</code> is <code>Manual</code>.</em></li>
+<li><code>outbound_resolver</code> (optional): </li>
+</ul>
+<h2 id="examples-1"><a class="header" href="#examples-1">Examples</a></h2>
+<p>Select a network interface automatically:</p>
+<pre><code class="language-json">{
+  &quot;family_preference&quot;: &quot;Both&quot;,
+  &quot;type&quot;: &quot;Auto&quot;
+}
+</code></pre>
+<p>Select the network interface called <code>eth0</code>:</p>
+<pre><code class="language-json">{
+  &quot;family_preference&quot;: &quot;Ipv4Only&quot;,
+  &quot;type&quot;: &quot;Manual&quot;,
+  &quot;netif&quot;: &quot;eth0&quot;
+}
+</code></pre>
+<h2 id="details-6"><a class="header" href="#details-6">Details</a></h2>
+<p>To keep track of usable network interfaces, the plugin keeps watching network changes regardless of <code>type</code>.</p>
+<p>When <code>family_preference</code> is set to <code>Auto</code> and there is at least one IPv6 address and one IPv4 address assigned to the network interface, the plugin utilizes <a href="https://datatracker.ietf.org/doc/html/rfc8305">RFC 8305</a>: Happy Eyeballs Version 2 strategy to establish a TCP connection to both IPv4 and IPv6 networks in a concurrent manner. For Datagram Sessions, there is no guarantee which address family will be used to send packets.</p>
+<h3 id="platform-specific-implementation-details"><a class="header" href="#platform-specific-implementation-details">Platform-specific Implementation Details</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Platform</th><th>Socket bind</th><th>Network change monitoring</th><th>Host name resolution</th></tr></thead><tbody>
+<tr><td>macOS/iOS</td><td><code>IP_BOUND_IF</code> / <code>IPV6_BOUND_IF</code></td><td><a href="https://developer.apple.com/documentation/network/nw_path_monitor_t?language=objc"><code>nw_path_monitor_t</code></a></td><td><a href="https://developer.apple.com/documentation/dnssd?language=objc">dnssd</a></td></tr>
+<tr><td>Windows</td><td>socket bind to interface address</td><td><a href="https://learn.microsoft.com/en-us/uwp/api/windows.networking.connectivity.networkinformation.networkstatuschanged"><code>Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged</code></a></td><td><a href="plugins/./host-resolver.html"><code>host_resolver</code></a> via DNS addresses of the interface</td></tr>
+<tr><td>Linux</td><td><code>SO_BINDTODEVICE</code></td><td><a href="https://man7.org/linux/man-pages/man7/netlink.7.html"><code>netlink</code></a></td><td><a href="https://www.freedesktop.org/software/systemd/man/latest/org.freedesktop.resolve1.html">systemd-resolved D-Bus API</a>, <br> fallback to <a href="plugins/./host-resolver.html"><code>host-resolver</code></a> via DNS addresses of the interface retrieved from <a href="https://networkmanager.dev/docs/api/latest/gdbus-org.freedesktop.NetworkManager.DnsManager.html">NetworkManager D-Bus API</a></td></tr>
+</tbody></table>
+</div>
+<h2 id="revision-history-9"><a class="header" href="#revision-history-9">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed <code>netif</code> access point.</li>
+<li>2023-04-29: Refactored parameters; removed <code>Virtual</code>.</li>
+<li>2023-04-29: Happy Eyeballs Version 2.</li>
+<li>2024-04-05: Added <code>outbound_resolver</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="null"><a class="header" href="#null">null</a></h1>
+<p>Silently drop any outgoing requests.</p>
+<h2 id="access-points-11"><a class="header" href="#access-points-11">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound.</li>
+<li><code>udp</code>: Datagram Session Outbound.</li>
+<li><code>resolver</code>: Resolver.</li>
+</ul>
+<h2 id="parameters-12"><a class="header" href="#parameters-12">Parameters</a></h2>
+<pre><code class="language-json">null
+</code></pre>
+<h2 id="note"><a class="header" href="#note">Note</a></h2>
+<p>The plugin returns an error for any requests, instead of being a black hole like <a href="https://en.wikipedia.org/wiki/Null_device"><code>/dev/null</code></a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="redirect"><a class="header" href="#redirect">redirect</a></h1>
+<p>Change the destination of connections or datagrams.</p>
+<h2 id="access-points-12"><a class="header" href="#access-points-12">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Change the destination of Streams.</li>
+<li><code>udp</code>: Datagram Session Outbound. Change the destination of Datagram Sessions and all datagrams flowing through.</li>
+</ul>
+<h2 id="parameters-13"><a class="header" href="#parameters-13">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;dest&quot;: {
+    &quot;host&quot;: &quot;my.proxy.server.com.&quot;,
+    &quot;port&quot;: 8388
+  },
+  &quot;tcp_next&quot;: &quot;phy-socket&quot;,
+  &quot;udp_next&quot;: &quot;phy-socket&quot;
+}
+</code></pre>
+<ul>
+<li><code>dest.host</code>: Hostname or IP address of the destination.</li>
+<li><code>dest.port</code>: Destination port.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound to establish new outbound Streams.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Outbound to establish new outbound Datagram Sessions.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reject"><a class="header" href="#reject">reject</a></h1>
+<p>Silently reject any incoming requests.</p>
+<h2 id="access-points-13"><a class="header" href="#access-points-13">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler.</li>
+<li><code>udp</code>: Datagram Stream Handler.</li>
+</ul>
+<h2 id="parameters-14"><a class="header" href="#parameters-14">Parameters</a></h2>
+<pre><code class="language-json">null
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resolve-dest"><a class="header" href="#resolve-dest">resolve-dest</a></h1>
+<p>Resolve domain names in flow destinations to IP addresses.</p>
+<h2 id="access-points-14"><a class="header" href="#access-points-14">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler. Available only when <code>tcp_next</code> is set. Try to replace the destination domain name with an IP address it resolves to.</li>
+<li><code>udp</code>: Datagram Session Handler. Available only when <code>udp_next</code> is set. For Datagram Session Handlers and every datagram flowing through, try to replace the destination domain name with an IP address it resolves to.</li>
+</ul>
+<h2 id="parameters-15"><a class="header" href="#parameters-15">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;resolver&quot;: &quot;fake-ip.resolver&quot;,
+  &quot;tcp_next&quot;: &quot;main-forward.tcp&quot;,
+  &quot;udp_next&quot;: &quot;main-forward.tcp&quot;,
+}
+</code></pre>
+<ul>
+<li><code>resolver</code>: Descriptor of the Resolver.</li>
+<li><code>tcp_next</code> (optional): Descriptor of the Stream Handler to handle the Stream with destination addresses resolved by the resolver. The <code>tcp</code> access point will be available only when this parameter is set.</li>
+<li><code>udp_next</code> (optional): Descriptor of the Datagram Session Handler to handle the Datagram Session with destination addresses resolved by the resolver for all incoming packets. Destination addresses for outgoing packets will be mapped back to domain names based on resolution history within the session at a best-effort basis. The <code>udp</code> access point will be available only when this parameter is set.</li>
+</ul>
+<h2 id="revision-history-10"><a class="header" href="#revision-history-10">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed <code>reverse</code>.</li>
+<li>2023-06-05: Fixed <code>tcp_next</code>, <code>udp_next</code> types.</li>
+<li>2023-06-05: Specify UDP mapback behavior.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rule-dispatcher"><a class="header" href="#rule-dispatcher">rule-dispatcher</a></h1>
+<p>Match the connection against rules defined in a resource, and use the handler of a corresponding action or fallback handler if there is no match.</p>
+<h2 id="access-points-15"><a class="header" href="#access-points-15">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler defined in <code>actions</code> and selected by the rules, or <code>fallback.tcp</code> if none matches.</li>
+<li><code>udp</code>: Datagram Session Handler defined in <code>actions</code> and selected by the rules, or <code>fallback.udp</code> if none matches. Dispatching applies to Datagram Sessions only. Datagrams flowing through are not inspected.</li>
+<li><code>resolver</code>: Resolver defined in <code>actions</code> and the requesting domain name is selected by the rules, or <code>fallback.resolver</code> if none matches.</li>
+</ul>
+<h2 id="parameters-16"><a class="header" href="#parameters-16">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;resolver&quot;: &quot;doh-resolver.resolver&quot;,
+  &quot;source&quot;: &quot;enhanced-proxy-list&quot;,
+  &quot;geoip&quot;: &quot;dreamacro-geoip&quot;,
+  &quot;actions&quot;: {
+    &quot;direct&quot;: {
+      &quot;tcp&quot;: &quot;direct-forward.tcp&quot;,
+      &quot;udp&quot;: &quot;direct-forward.udp&quot;,
+      &quot;resolver&quot;: &quot;phy.resolver&quot;
+    },
+    &quot;reject&quot;: {
+      &quot;tcp&quot;: &quot;reject.tcp&quot;,
+      &quot;udp&quot;: &quot;reject.udp&quot;,
+      &quot;resolver&quot;: &quot;null.resovler&quot;
+    }
+  },
+  &quot;rules&quot;: {
+    &quot;cn&quot;: &quot;direct&quot;
+  },
+  &quot;fallback&quot;: {
+    &quot;tcp&quot;: &quot;proxy-forward.tcp&quot;,
+    &quot;udp&quot;: &quot;proxy-forward.udp&quot;,
+    &quot;resolver&quot;: &quot;fake-ip.resolver&quot;
+  }
+}
+</code></pre>
+<ul>
+<li><code>resolver</code> (optional): Specify the resolver to resolve domain names to IP addresses as additional inputs for rule matching. If omitted, destination addresses with domain names will not be matched against IP address related rules. A secure DNS resolver is recommended. See <a href="plugins/./host-resolver.html"><code>host-resolver</code></a> for a DNS-over-HTTPS resolver.</li>
+<li><code>geoip</code> (optional): Specify the resource name of a GeoIP database to use for matching. If omitted, the rules with type <code>geoip</code> in <code>quanx-filter</code> rulesets will be skipped during matching. The GeoIP database is a MaxMind DB File containing country data. Do not specify this parameter if the ruleset has type <code>geoip-country</code> which is redundant and will not take effect.</li>
+<li><code>source</code>: Specify an existing ruleset or inline rules. Use a string for the name of the ruleset, or an object for inline rules. See <a href="plugins/rule-dispatcher.html#rule-source">Rule Source</a> section for more details.
+<ul>
+<li><code>source.format</code>: Specify the format of the inline rules. Can be one of the following:
+<ul>
+<li><a href="plugins/rule-dispatcher.html#quanx-filter"><code>quanx-filter</code></a></li>
+</ul>
+</li>
+<li><code>source.text</code>: An array of the lines of the inline rules, excluding line endings.</li>
+</ul>
+</li>
+<li><code>actions</code>: Specify the groups of Stream Handlers, Datagram Session Handlers and Resolvers.
+<ul>
+<li><code>actions[].tcp</code> (optional): Descriptor of the Stream Handler to handle Streams when the action is selected. If omitted, Streams will be discarded when the action is selected.</li>
+<li><code>actions[].udp</code> (optional): Descriptor of the Datagram Session Handler to handle Datagram Sessions when the action is selected. If omitted, Datagram Sessions will be discarded when the action is selected.</li>
+<li><code>actions[].resolver</code> (optional): Descriptor of the Resolver to use when the action is selected. If omitted, no response will be generated for resolution requests.</li>
+</ul>
+</li>
+<li><code>rules</code>: Specify the rule-action mapping. The meaning of the keys depends on the type of the ruleset. For <code>geoip-country</code>, the keys are <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a> country codes (case-insensitive). For <code>quanx-filter</code>, the keys are the targets of the ruleset.</li>
+<li><code>fallback</code>: The action to use when no rule matches. See <code>actions</code> for the format.</li>
+</ul>
+<h2 id="rule-source-1"><a class="header" href="#rule-source-1">Rule Source</a></h2>
+<p>The <code>source</code> parameter specifies the ruleset or inline rules for matching. The format can be one of the following:</p>
+<h3 id="geoip-country"><a class="header" href="#geoip-country"><code>geoip-country</code></a></h3>
+<p>A MaxMind DB File containing country data. The rules are matched against the country code of the destination IP address. It cannot be used as inline rules.</p>
+<h3 id="quanx-filter"><a class="header" href="#quanx-filter"><code>quanx-filter</code></a></h3>
+<p><code>quanx-filter</code> is a line-based text format. Each line consists of a few comma-separated components specifying the matching criteria and a target. The target is used as the key in the <code>rules</code> parameter.</p>
+<pre><code class="language-ini">; This is a comment.
+# This is also a comment.
+
+; Take action `direct` when the destination domain name is exactly www.example.com
+host, www.example.com, direct
+domain, www.example.com, direct # equivalent to the above line
+
+; Take action `proxy` when the destination domain name ends with ip.sb
+host-suffix, ip.sb, proxy
+domain-suffix, ip.sb, proxy # equivalent to the above line
+
+; Take action `direct` when the destination domain name contains google-analytics
+host-keyword, google-analytics, reject
+domain-keyword, google-analytics, reject # equivalent to the above line
+
+; Take action `direct` when the destination IP address is 114.114.114.114.
+; Skipped if the destination address is a domain name.
+ip-cidr, 114.114.114.114/32, direct, no-resolve
+
+# Take action `direct` when the destination IP address is in the range.
+; If the destination address is a domain name, the IP address resolved by the resolver parameter will be matched.
+ip-cidr, 1.1.1.1/16, direct
+
+; Take action `proxy` when the destination IP address is in the range 2001:4860:4860::8800/120.
+; Skipped if the destination address is a domain name.
+ip6-cidr, 2001:4860:4860::8800/120, proxy, no-resolve
+ip-cidr6, 2001:4860:4860::8800/120, proxy, no-resolve ; equivalent to the above line
+
+; take action `direct` when the destination IP address is located in China.
+; If the destination address is a domain name, the resolved IP address will be matched.
+geoip, cn, direct
+
+; take action `proxy` for all unmatched connections.
+; This line is **optional**.
+final, proxy
+</code></pre>
+<p>The first component specifies the type of the rule:</p>
+<ul>
+<li><code>host</code>/<code>domain</code>: Match the exact domain name of the destination against the second component. Take the action specified in the third component if matched.</li>
+<li><code>host-suffix</code>/<code>domain-suffix</code>: Match the suffix of the domain name of the destination against the second component. Take the action specified in the third component if matched.</li>
+<li><code>host-keyword</code>/<code>domain-keyword</code>: Match the keyword in the domain name of the destination against the second component. Take the action specified in the third component if matched.</li>
+<li><code>ip-cidr</code>: Match the destination IP address against the CIDR block specified in the second component. Take the action specified in the third component if matched. If the fourth component <code>no-resolve</code> exists, the rule is skipped when the destination address is a domain name.</li>
+<li><code>ip6-cidr</code>/<code>ip-cidr6</code>: Match the destination IPv6 address against the CIDR block specified in the second component. Take the action specified in the third component if matched. If the fourth component <code>no-resolve</code> exists, the rule is skipped when the destination address is a domain name.</li>
+<li><code>geoip</code>: Match the destination IP address against the country code specified in the second component. Take the action specified in the third component if matched. If the fourth component <code>no-resolve</code> exists, the rule is skipped when the destination address is a domain name. The GeoIP database is specified in the <code>geoip</code> parameter. The rule is skipped if the <code>geoip</code> parameter is not set.</li>
+<li><code>final</code>: Take the action specified in the second component for all unmatched connections. As opposed to other implementations, the <code>final</code> rule is optional. When omitted, the <code>fallback</code> action is used for all unmatched connections.</li>
+</ul>
+<p>During matching, the rules are evaluated in the order they appear in the ruleset. The first rule that matches the connection is selected. A host name resolution is not performed until it reaches an <code>ip-cidr</code>, <code>ip6-cidr</code>, or <code>geoip</code> rule without <code>no-resolve</code>.</p>
+<h2 id="examples-2"><a class="header" href="#examples-2">Examples</a></h2>
+<p>Dispatch connections targeting IP addresses located in China to <code>direct-forward</code> <a href="plugins/./forward.html"><code>forward</code></a> plugin using a managed GeoIP database:</p>
+<pre><code class="language-json">{
+  &quot;actions&quot;: {
+    &quot;direct&quot;: {
+      &quot;tcp&quot;: &quot;direct-forward.tcp&quot;,
+      &quot;udp&quot;: &quot;resolve-local.udp&quot;
+    }
+  },
+  &quot;fallback&quot;: {
+    &quot;tcp&quot;: &quot;proxy-forward.tcp&quot;,
+    &quot;udp&quot;: &quot;resolve-proxy.udp&quot;
+  },
+  &quot;resolver&quot;: &quot;doh-resolver.resolver&quot;,
+  &quot;rules&quot;: {
+    &quot;cn&quot;: &quot;direct&quot;
+  },
+  &quot;source&quot;: &quot;dreamacro-geoip&quot;
+}
+</code></pre>
+<p>Dispatch connections based on custom inline rules:</p>
+<pre><code class="language-json">{
+  &quot;actions&quot;: {
+    &quot;direct&quot;: {
+      &quot;tcp&quot;: &quot;direct-forward.tcp&quot;,
+      &quot;udp&quot;: &quot;resolve-local.udp&quot;
+    },
+    &quot;proxy&quot;: {
+      &quot;tcp&quot;: &quot;proxy-forward.tcp&quot;,
+      &quot;udp&quot;: &quot;resolve-proxy.udp&quot;
+    },
+    &quot;reject&quot;: {
+      &quot;tcp&quot;: &quot;reject.tcp&quot;,
+      &quot;udp&quot;: &quot;reject.udp&quot;
+    }
+  },
+  &quot;fallback&quot;: {
+    &quot;tcp&quot;: &quot;geoip-dispatcher.tcp&quot;,
+    &quot;udp&quot;: &quot;geoip-dispatcher.udp&quot;
+  },
+  &quot;rules&quot;: {
+    &quot;direct&quot;: &quot;direct&quot;,
+    &quot;proxy&quot;: &quot;proxy&quot;,
+    &quot;reject&quot;: &quot;reject&quot;
+  },
+  &quot;source&quot;: {
+    &quot;format&quot;: &quot;quanx-filter&quot;,
+    &quot;text&quot;: [
+      &quot;domain, www.example.com, direct&quot;,
+      &quot;domain-suffix, ip.sb, proxy&quot;,
+      &quot;domain-keyword, google-analytics, reject&quot;,
+      &quot;ip-cidr, 114.114.114.114/32, direct, no-resolve&quot;,
+      &quot;ip6-cidr, 2001:4860:4860::8800/120, proxy, no-resolve&quot;
+    ]
+  }
+}
+</code></pre>
+<h2 id="revision-history-11"><a class="header" href="#revision-history-11">Revision History</a></h2>
+<ul>
+<li>2023-06-05: Added <code>rule-dispatcher</code>.</li>
+<li>2024-04-05: Added <code>quanx-filter</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shadowsocks-client"><a class="header" href="#shadowsocks-client">shadowsocks-client</a></h1>
+<p>Shadowsocks client.</p>
+<h2 id="access-points-16"><a class="header" href="#access-points-16">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound.</li>
+<li><code>udp</code>: Datagram Session Outbound.</li>
+</ul>
+<h2 id="parameters-17"><a class="header" href="#parameters-17">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;method&quot;: &quot;aes-128-gcm&quot;,
+  &quot;password&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_ss_password&quot;
+  },
+  &quot;tcp_next&quot;: &quot;proxy-redir.tcp&quot;,
+  &quot;udp_next&quot;: &quot;null.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>method</code>: The encryption method, or cipher. Supported methods:
+<ul>
+<li><code>none</code>/<code>plain</code></li>
+<li><code>rc4</code></li>
+<li><code>rc4-md5</code></li>
+<li><code>aes-128-cfb</code></li>
+<li><code>aes-192-cfb</code></li>
+<li><code>aes-256-cfb</code></li>
+<li><code>aes-128-ctr</code></li>
+<li><code>aes-192-ctr</code></li>
+<li><code>aes-256-ctr</code></li>
+<li><code>camellia-128-cfb</code></li>
+<li><code>camellia-192-cfb</code></li>
+<li><code>camellia-256-cfb</code></li>
+<li><code>aes-128-gcm</code></li>
+<li><code>aes-256-gcm</code></li>
+<li><code>chacha20-ietf</code></li>
+<li><code>chacha20-ietf-poly1305</code></li>
+<li><code>xchacha20-ietf-poly1305</code></li>
+</ul>
+</li>
+<li><code>password</code>: Specify the password to generate encryption keys.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound to establish new outbound Streams.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Outbound to establish new outbound Datagram Sessions.</li>
+</ul>
+<h2 id="revision-history-12"><a class="header" href="#revision-history-12">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Added <code>udp</code> access point.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="simple-dispatcher"><a class="header" href="#simple-dispatcher">simple-dispatcher</a></h1>
+<p>Match the source/dest address against a list of simple rules, and use the corresponding handler or fallback handler if there is no match.</p>
+<h2 id="access-points-17"><a class="header" href="#access-points-17">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler.</li>
+<li><code>udp</code>: Datagram Session Handler. Dispatching applies to Datagram Sessions only. Datagrams flowing through are not inspected.</li>
+</ul>
+<h2 id="parameters-18"><a class="header" href="#parameters-18">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;fallback_tcp&quot;: &quot;main-forward.tcp&quot;,
+  &quot;fallback_udp&quot;: &quot;main-forward.udp&quot;,
+  &quot;rules&quot;: [
+    {
+      &quot;is_udp&quot;: true,
+      &quot;src&quot;: {
+        &quot;ip_ranges&quot;: [&quot;0.0.0.0/0&quot;],
+        &quot;port_ranges&quot;: [{ &quot;start&quot;: 0, &quot;end&quot;: 65535 }]
+      },
+      &quot;dst&quot;: {
+        &quot;ip_ranges&quot;: [&quot;11.16.1.1/32&quot;],
+        &quot;port_ranges&quot;: [{ &quot;start&quot;: 53, &quot;end&quot;: 53 }]
+      },
+      &quot;next&quot;: &quot;fakeip-dns-server.udp&quot;
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li><code>fallback_tcp</code>: Descriptor of the Stream Handler to handle Streams when none of the rules matches.</li>
+<li><code>fallback_udp</code>: Descriptor of the Datagram Session Handler to handle Datagram Sessions when none of the rules matches.</li>
+<li><code>rules</code>: List of rules.
+<ul>
+<li><code>rules[].is_udp</code>: Specify whether the rule applies to Datagram Sessions or Streams.</li>
+<li><code>rules[].src</code>: Specify the source address and port.
+<ul>
+<li><code>rules[].src.ip_ranges</code>: List of IP ranges in <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a> format.</li>
+<li><code>rules[].src.port_ranges</code>: List of port ranges.
+<ul>
+<li><code>rules[].src.port_ranges[].start</code>: Start port, inclusive.</li>
+<li><code>rules[].src.port_ranges[].end</code>: End port, inclusive.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>rules[].dst</code>: Specify the destination address and port.</li>
+<li><code>rules[].next</code>: Descriptor of the handler to use when the rule matches.</li>
+</ul>
+</li>
+</ul>
+<h2 id="note-1"><a class="header" href="#note-1">Note</a></h2>
+<p>For large number of rules, <code>simple-dispatcher</code> may not be efficient as it matches all the rules sequentially. In this case, consider using <a href="plugins/./rule-dispatcher.html"><code>rule-dispatcher</code></a> instead. </p>
+<h2 id="revision-history-13"><a class="header" href="#revision-history-13">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Use human representation for IP CIDR.</li>
+<li>2023-06-05: Fixed access points, <code>fallback_tcp</code>, <code>fallback_udp</code> types.</li>
+<li>2023-06-05: Add recommendation for <code>rule-dispatcher</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="socket"><a class="header" href="#socket">socket</a></h1>
+<p>Represents a system socket connection.</p>
+<h2 id="access-points-18"><a class="header" href="#access-points-18">Access Points</a></h2>
+<ul>
+<li>: Stream Outbound and Datagram Session Outbound. Initiate a TCP connection or UDP socket. Use the plugin name as the descriptor.</li>
+</ul>
+<h2 id="parameters-19"><a class="header" href="#parameters-19">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;resolver&quot;: &quot;phy.resolver&quot;,
+  &quot;bind_addr_v4&quot;: &quot;0.0.0.0:0&quot;,
+  &quot;bind_addr_v6&quot;: null
+}
+</code></pre>
+<ul>
+<li><code>resolver</code>: Descriptor of the Resolver to resolve domain names to IP addresses.</li>
+<li><code>bind_addr_v4</code> (optional): IPv4 socket address to bind to. If omitted, a default socket address will be used. If set to <code>null</code>, IPv4 will be disabled.</li>
+<li><code>bind_addr_v6</code> (optional): IPv6 socket address to bind to. If omitted, a default socket address will be used. If set to <code>null</code>, IPv6 will be disabled.</li>
+</ul>
+<h2 id="details-7"><a class="header" href="#details-7">Details</a></h2>
+<p>When both <code>bind_addr_v4</code> and <code>bind_addr_v6</code> are non-<code>null</code> (i.e. either specified a value or omitted), the plugin utilizes <a href="https://datatracker.ietf.org/doc/html/rfc8305">RFC 8305</a>: Happy Eyeballs Version 2 strategy to establish a connection to both IPv4 and IPv6 networks in a concurrent manner.</p>
+<h2 id="revision-history-14"><a class="header" href="#revision-history-14">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Removed <code>netif</code>; added <code>bind_addr</code>.</li>
+<li>2023-04-29: Happy Eyeballs Version 2.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="socket-listener"><a class="header" href="#socket-listener">socket-listener</a></h1>
+<p>Bind a socket to a specified port and listen for connections or datagrams.</p>
+<h2 id="access-points-19"><a class="header" href="#access-points-19">Access Points</a></h2>
+<p>No access point is provided. This plugin should be used as entry plugin.</p>
+<h2 id="parameters-20"><a class="header" href="#parameters-20">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;tcp_listen&quot;: [&quot;127.0.0.1:1080&quot;],
+  &quot;udp_listen&quot;: [&quot;127.0.0.1:1080&quot;],
+  &quot;tcp_next&quot;: &quot;geoip-dispatcher.tcp&quot;,
+  &quot;udp_next&quot;: &quot;geoip-dispatcher.udp&quot;
+}
+</code></pre>
+<ul>
+<li><code>tcp_listen</code> (optional): List of socket addresses to listen on TCP connections.</li>
+<li><code>udp_listen</code> (optional): List of socket addresses to receive UDP datagrams.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Handler.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Handler.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="socks5-client"><a class="header" href="#socks5-client">socks5-client</a></h1>
+<p>SOCKS5 client.</p>
+<h2 id="access-points-20"><a class="header" href="#access-points-20">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound.</li>
+</ul>
+<p><em>The UDP protocol is not implemented as of YtFlowCore 0.1.</em></p>
+<h2 id="parameters-21"><a class="header" href="#parameters-21">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;user&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_socks5_username&quot;
+  },
+  &quot;pass&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_socks5_password&quot;
+  },
+  &quot;tcp_next&quot;: &quot;proxy-redir.tcp&quot;,
+  &quot;udp_next&quot;: &quot;proxy-redir.udp&quot;,
+}
+</code></pre>
+<ul>
+<li><code>user</code> (optional): Specify the user name of the credential. Omitting this field disables authentication.</li>
+<li><code>pass</code> (optional): Specify the password of the credential. Omitting this field disables authentication.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound to send SOCKS5 requests.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Outbound to send SOCKS5 UDP payloads.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="socks5-server"><a class="header" href="#socks5-server">socks5-server</a></h1>
+<p>SOCKS5 server.</p>
+<h2 id="access-points-21"><a class="header" href="#access-points-21">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler.</li>
+</ul>
+<p><em>The UDP protocol is not implemented as of YtFlowCore 0.1.</em></p>
+<h2 id="parameters-22"><a class="header" href="#parameters-22">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;user&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_socks5_username&quot;
+  },
+  &quot;pass&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_socks5_password&quot;
+  },
+  &quot;tcp_next&quot;: &quot;forward.tcp&quot;,
+  &quot;udp_next&quot;: &quot;forward.udp&quot;,
+}
+</code></pre>
+<ul>
+<li><code>user</code> (optional): Specify the user name of the credential. Omitting this field disables authentication.</li>
+<li><code>pass</code> (optional): Specify the password of the credential. Omitting this field disables authentication.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Handler to use.</li>
+<li><code>udp_next</code>: Descriptor of the Datagram Session Handler to use.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="switch"><a class="header" href="#switch">switch</a></h1>
+<p>Handle incoming connections using runtime-selected handlers from a pre-defined list.</p>
+<blockquote>
+<p>This plugin requires a database file to work. If a database file is not provided, it will fail to load.</p>
+</blockquote>
+<h2 id="access-points-22"><a class="header" href="#access-points-22">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Handler selected at runtime.</li>
+<li><code>udp</code>: Datagram Session Handler selected at runtime.</li>
+</ul>
+<h2 id="parameters-23"><a class="header" href="#parameters-23">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;choices&quot;: [
+    {
+      &quot;name&quot;: &quot;Proxy&quot;,
+      &quot;description&quot;: &quot;Proxy all connections unconditionally&quot;,
+      &quot;tcp_next&quot;: &quot;proxy-forward.tcp&quot;,
+      &quot;udp_next&quot;: &quot;proxy-forward.udp&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Rule&quot;,
+      &quot;description&quot;: &quot;Match connections against rules&quot;,
+      &quot;tcp_next&quot;: &quot;rule-dispatcher.tcp&quot;,
+      &quot;udp_next&quot;: &quot;rule-dispatcher.udp&quot;
+    }
+  ]
+}
+</code></pre>
+<ul>
+<li><code>choices</code>: Specify the list of choices.
+<ul>
+<li><code>choices[].name</code>: Name of the choice.</li>
+<li><code>choices[].description</code>: Description of the choice.</li>
+<li><code>choices[].tcp_next</code>: Descriptor of the Stream Handler to use when the choice is selected.</li>
+<li><code>choices[].udp_next</code>: Descriptor of the Datagram Session Handler to use when the choice is selected.</li>
+</ul>
+</li>
+</ul>
+<h2 id="details-8"><a class="header" href="#details-8">Details</a></h2>
+<p>Selection is managed by the UI application. During runtime, a user can change the selection from the UI via RPC. The selection will be stored in the database so that the plugin will automatically load the last choice on next startup.</p>
+<h2 id="revision-history-15"><a class="header" href="#revision-history-15">Revision History</a></h2>
+<ul>
+<li>2023-06-05: Added <code>switch</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="system-resolver"><a class="header" href="#system-resolver">system-resolver</a></h1>
+<p>Resolve real IP addresses by calling system functions. This is the recommended resolver for simple proxy scenarios for both client and server.</p>
+<h2 id="access-points-23"><a class="header" href="#access-points-23">Access Points</a></h2>
+<ul>
+<li><code>resolver</code>: Resolver. Resolve domain names to real IP addresses, and map recent results back to domain names on a best-effort basis.</li>
+</ul>
+<h2 id="parameters-24"><a class="header" href="#parameters-24">Parameters</a></h2>
+<pre><code class="language-json">null
+</code></pre>
+<h2 id="details-9"><a class="header" href="#details-9">Details</a></h2>
+<p>The implementation uses <a href="https://docs.rs/tokio/latest/tokio/net/fn.lookup_host.html"><code>tokio::net::lookup_host</code></a>, which invokes <a href="https://man7.org/linux/man-pages/man3/getaddrinfo.3.html">getaddrinfo</a> under the hood.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tls-client"><a class="header" href="#tls-client">tls-client</a></h1>
+<p>TLS client stream.</p>
+<h2 id="access-points-24"><a class="header" href="#access-points-24">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Encrypt the Stream with TLS.</li>
+</ul>
+<h2 id="parameters-25"><a class="header" href="#parameters-25">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;alpn&quot;: [&quot;h2&quot;, &quot;http/1.1&quot;],
+  &quot;skip_cert_check&quot;: false,
+  &quot;sni&quot;: &quot;my.trojan.proxy.server.com&quot;,
+  &quot;next&quot;: &quot;proxy-redir.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>alpn</code> (optional): List of <a href="https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation">ALPN</a> values. If omitted, the ALPN extension will be inferred from the upper layer plugins, or disabled if none of the upper layer plugins provide ALPN values.</li>
+<li><code>skip_cert_check</code> (optional): Whether to skip certificate verification, a.k.a. <code>allowInsecure</code>. Enabling this option invites <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attacks</a>, thus you are strongly discouraged from doing so.</li>
+<li><code>sni</code> (optional): Overwrite the server name in TLS requests. If omitted, the destination hostname of Streams will be used.</li>
+<li><code>next</code>: Descriptor of the Stream Outbound to send TLS encrypted data.</li>
+</ul>
+<h2 id="details-10"><a class="header" href="#details-10">Details</a></h2>
+<p>The following plugins are <a href="https://en.wikipedia.org/wiki/Application-Layer_Protocol_Negotiation">ALPN</a>-aware:</p>
+<ul>
+<li><a href="plugins/./ws-client.html"><code>ws-client</code></a>: <code>h2</code> and <code>http/1.1</code> auto adaptive</li>
+<li><a href="plugins/./host-resolver.html"><code>host-resolver</code></a>: <code>h2</code> and <code>http/1.1</code> for DNS-over-HTTPS endpoints</li>
+</ul>
+<h2 id="revision-history-16"><a class="header" href="#revision-history-16">Revision History</a></h2>
+<ul>
+<li>2023-05-10: Added <code>alpn</code>.</li>
+<li>2023-06-05: Specify auto-inferred <code>alpn</code>.</li>
+<li>2024-01-16: Update <code>ws-client</code> with <code>http/2</code> support</li>
+<li>2024-01-17: Remove <code>ws-client</code> from <code>alpn</code> exceptions</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tls-obfs-client"><a class="header" href="#tls-obfs-client">tls-obfs-client</a></h1>
+<p>simple-obfs TLS client.</p>
+<h2 id="access-points-25"><a class="header" href="#access-points-25">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Returns a fake-TLS handshaked Stream.</li>
+</ul>
+<h2 id="parameters-26"><a class="header" href="#parameters-26">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;host&quot;: &quot;dl.microsoft.com&quot;,
+  &quot;next&quot;: &quot;proxy-redir.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>host</code>: Specify the value of <code>Host</code> HTTP header.</li>
+<li><code>next</code>: Descriptor of the Stream Outbound to perform HTTP obfuscation.</li>
+</ul>
+<h2 id="details-11"><a class="header" href="#details-11">Details</a></h2>
+<p>This plugin is compatible with <a href="https://github.com/shadowsocks/simple-obfs">simple-obfs</a>, and does not perform real TLS handshaking. It simply appends a fake ClientHello packet before the Stream, and discards the response header.</p>
+<h2 id="revision-history-17"><a class="header" href="#revision-history-17">Revision History</a></h2>
+<ul>
+<li>2023-05-11: Added <code>tls-obfs-client</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="trojan-client"><a class="header" href="#trojan-client">trojan-client</a></h1>
+<p>Trojan client.</p>
+<h2 id="access-points-26"><a class="header" href="#access-points-26">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound.</li>
+</ul>
+<p><em>The UDP protocol is not implemented as of YtFlowCore 0.1.</em></p>
+<h2 id="parameters-27"><a class="header" href="#parameters-27">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;password&quot;: {
+    &quot;__byte_repr&quot;: &quot;utf8&quot;,
+    &quot;data&quot;: &quot;my_trojan_password&quot;
+  },
+  &quot;tls_next&quot;: &quot;trojan-client-tls.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>password</code>: Password.</li>
+<li><code>tls_next</code>: Descriptor of the Stream Outbound to send <strong>plaintext</strong> Trojan requests.</li>
+</ul>
+<h2 id="note-2"><a class="header" href="#note-2">Note</a></h2>
+<p>TLS is not included. You will likely need to connect <code>trojan-client</code> to a <code>tls-client</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vmess-client"><a class="header" href="#vmess-client">vmess-client</a></h1>
+<p>VMess client.</p>
+<h2 id="access-points-27"><a class="header" href="#access-points-27">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound.</li>
+</ul>
+<p><em>The UDP protocol is not implemented as of YtFlowCore 0.3.</em></p>
+<h2 id="parameters-28"><a class="header" href="#parameters-28">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;user_id&quot;: &quot;b831381d-6324-4d53-ad4f-8cda48b30811&quot;,
+  &quot;security&quot;: &quot;auto&quot;,
+  &quot;alter_id&quot;: 0,
+  &quot;tcp_next&quot;: &quot;proxy-redir.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>user_id</code>: Specify the user ID to generate encryption keys.</li>
+<li><code>security</code> (optional): The encryption method, or cipher for stream payload. Defaults to <code>auto</code>. Supported values:
+<ul>
+<li><code>none</code></li>
+<li><code>auto</code> (<code>aes-128-gcm</code> on x86_64 or aarch64 devices, <code>chacha20-poly1305</code> otherwise)</li>
+<li><code>aes-128-cfb</code></li>
+<li><code>aes-128-gcm</code></li>
+<li><code>chacha20-poly1305</code></li>
+</ul>
+</li>
+<li><code>alter_id</code> (optional): <code>0</code> to enable VMess AEAD header format (default), any value greater than <code>0</code> to disable VMess AEAD header format. This value works solely as a switch for VMess AEAD header format. No alter IDs are generated.</li>
+<li><code>tcp_next</code>: Descriptor of the Stream Outbound to establish new outbound Streams.</li>
+</ul>
+<h2 id="details-12"><a class="header" href="#details-12">Details</a></h2>
+<p>The following request options are enabled in YtFlowCore:</p>
+<ul>
+<li><code>RequestOptionChunkStream</code> (0x01)</li>
+<li><code>RequestOptionChunkMasking</code> (0x04)</li>
+</ul>
+<p>The following request options are not supported:</p>
+<ul>
+<li><code>RequestOptionConnectionReuse</code> (0x02)</li>
+<li><code>RequestOptionGlobalPadding</code> (0x08)</li>
+<li><code>RequestOptionAuthenticatedLength</code> (0x10)</li>
+</ul>
+<h2 id="revision-history-18"><a class="header" href="#revision-history-18">Revision History</a></h2>
+<ul>
+<li>2023-05-11: Added <code>vmess-client</code>.</li>
+<li>2023-05-18: Fixed data type for <code>alter_id</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vpn-tun"><a class="header" href="#vpn-tun">vpn-tun</a></h1>
+<p>An instance to be instantiated by a VPN system service, such as UWP VPN Plugin on Windows.</p>
+<h2 id="access-points-28"><a class="header" href="#access-points-28">Access Points</a></h2>
+<ul>
+<li><code>tun</code>: TUN Interface.</li>
+</ul>
+<h2 id="parameters-29"><a class="header" href="#parameters-29">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;ipv4&quot;: &quot;192.168.3.1&quot;,
+  &quot;ipv4_route&quot;: [
+    &quot;11.17.0.0/16&quot;,
+    &quot;11.16.0.0/16&quot;
+  ],
+  &quot;ipv6&quot;: null,
+  &quot;ipv6_route&quot;: [],
+  &quot;dns&quot;: [&quot;11.16.1.1&quot;],
+  &quot;web_proxy&quot;: null
+}
+</code></pre>
+<ul>
+<li><code>ipv4</code> (optional): IPv4 address of the TUN interface.</li>
+<li><code>ipv4_route</code>: IPv4 routes <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a> format.</li>
+<li><code>ipv6</code> (optional): IPv6 address of the TUN interface.</li>
+<li><code>ipv6_route</code>: IPv6 routes <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a> format.</li>
+<li><code>dns</code>: Assigned DNS servers.</li>
+<li><code>web_proxy</code> (optional): Assigned proxy address.</li>
+</ul>
+<h2 id="details-13"><a class="header" href="#details-13">Details</a></h2>
+<p>For a <code>vpn-tun</code> to work, the YtFlowCore instance should be launched by a system VPN service, such as UWP VPN Plugin on Windows. There must be at most one <code>vpn-tun</code> instance in a YtFlowCore instance.</p>
+<h2 id="revision-history-19"><a class="header" href="#revision-history-19">Revision History</a></h2>
+<ul>
+<li>2023-04-29: Use human representation for IP CIDR.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ws-client"><a class="header" href="#ws-client">ws-client</a></h1>
+<p>WebSocket client.</p>
+<h2 id="access-points-29"><a class="header" href="#access-points-29">Access Points</a></h2>
+<ul>
+<li><code>tcp</code>: Stream Outbound. Returns a Stream on top of WebSocket.</li>
+</ul>
+<h2 id="parameters-30"><a class="header" href="#parameters-30">Parameters</a></h2>
+<pre><code class="language-json">{
+  &quot;host&quot;: &quot;dl.microsoft.com&quot;,
+  &quot;path&quot;: &quot;/&quot;,
+  &quot;headers&quot;: {},
+  &quot;next&quot;: &quot;proxy-redir.tcp&quot;
+}
+</code></pre>
+<ul>
+<li><code>host</code>: Specify the value of <code>Host</code> HTTP header.</li>
+<li><code>path</code>: Specify the path of the HTTP request.</li>
+<li><code>headers</code>: A key-value map of additional HTTP headers to be sent in the request.</li>
+<li><code>next</code>: Descriptor of the Stream Outbound.</li>
+</ul>
+<h2 id="details-14"><a class="header" href="#details-14">Details</a></h2>
+<p>The WebSocket implementation is capable of initiating WebSocket requests over HTTP/2 when <a href="plugins/./tls-client.html"><code>tls-client</code></a> is used as the lower layer transport. In case the HTTP/2 connection handshake fails for any reason during the first connection attempt, HTTP/1.1 will be used for all subsequent requests.</p>
+<p>Since the WebSocket protocol does not support half-closed connections, issues might occur for those user applications that rely on this feature.</p>
+<h2 id="revision-history-20"><a class="header" href="#revision-history-20">Revision History</a></h2>
+<ul>
+<li>2023-05-11: Added <code>ws-client</code>.</li>
+<li>2024-10-16: Document WebSockets over HTTP/2</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Profile and Plugin - YtFlowCore Book</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="preface.html">Preface</a></li><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="basics.html"><strong aria-hidden="true">2.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="profile-and-plugin.html" class="active"><strong aria-hidden="true">2.1.</strong> Profile and Plugin</a></li><li class="chapter-item expanded "><a href="access-point-and-descriptor.html"><strong aria-hidden="true">2.2.</strong> Access Point and Descriptor</a></li></ol></li><li class="chapter-item expanded "><a href="recipes.html"><strong aria-hidden="true">3.</strong> Recipes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="recipies/classic-proxy-client.html"><strong aria-hidden="true">3.1.</strong> Classic Proxy Client</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> VPN Proxy Client</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> VPN with DLC-based Split Routing</div></li></ol></li><li class="chapter-item expanded "><a href="plugins.html"><strong aria-hidden="true">4.</strong> Plugins</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="plugins/dns-server.html"><strong aria-hidden="true">4.1.</strong> dns-server</a></li><li class="chapter-item expanded "><a href="plugins/dyn-outbound.html"><strong aria-hidden="true">4.2.</strong> dyn-outbound</a></li><li class="chapter-item expanded "><a href="plugins/fake-ip.html"><strong aria-hidden="true">4.3.</strong> fake-ip</a></li><li class="chapter-item expanded "><a href="plugins/forward.html"><strong aria-hidden="true">4.4.</strong> forward</a></li><li class="chapter-item expanded "><a href="plugins/host-resolver.html"><strong aria-hidden="true">4.5.</strong> host-resolver</a></li><li class="chapter-item expanded "><a href="plugins/http-obfs-client.html"><strong aria-hidden="true">4.6.</strong> http-obfs-client</a></li><li class="chapter-item expanded "><a href="plugins/http-obfs-server.html"><strong aria-hidden="true">4.7.</strong> http-obfs-server</a></li><li class="chapter-item expanded "><a href="plugins/http-proxy-client.html"><strong aria-hidden="true">4.8.</strong> http-proxy-client</a></li><li class="chapter-item expanded "><a href="plugins/ip-stack.html"><strong aria-hidden="true">4.9.</strong> ip-stack</a></li><li class="chapter-item expanded "><a href="plugins/list-dispatcher.html"><strong aria-hidden="true">4.10.</strong> list-dispatcher</a></li><li class="chapter-item expanded "><a href="plugins/netif.html"><strong aria-hidden="true">4.11.</strong> netif</a></li><li class="chapter-item expanded "><a href="plugins/null.html"><strong aria-hidden="true">4.12.</strong> null</a></li><li class="chapter-item expanded "><a href="plugins/redirect.html"><strong aria-hidden="true">4.13.</strong> redirect</a></li><li class="chapter-item expanded "><a href="plugins/reject.html"><strong aria-hidden="true">4.14.</strong> reject</a></li><li class="chapter-item expanded "><a href="plugins/resolve-dest.html"><strong aria-hidden="true">4.15.</strong> resolve-dest</a></li><li class="chapter-item expanded "><a href="plugins/rule-dispatcher.html"><strong aria-hidden="true">4.16.</strong> rule-dispatcher</a></li><li class="chapter-item expanded "><a href="plugins/shadowsocks-client.html"><strong aria-hidden="true">4.17.</strong> shadowsocks-client</a></li><li class="chapter-item expanded "><a href="plugins/simple-dispatcher.html"><strong aria-hidden="true">4.18.</strong> simple-dispatcher</a></li><li class="chapter-item expanded "><a href="plugins/socket.html"><strong aria-hidden="true">4.19.</strong> socket</a></li><li class="chapter-item expanded "><a href="plugins/socket-listener.html"><strong aria-hidden="true">4.20.</strong> socket-listener</a></li><li class="chapter-item expanded "><a href="plugins/socks5-client.html"><strong aria-hidden="true">4.21.</strong> socks5-client</a></li><li class="chapter-item expanded "><a href="plugins/socks5-server.html"><strong aria-hidden="true">4.22.</strong> socks5-server</a></li><li class="chapter-item expanded "><a href="plugins/switch.html"><strong aria-hidden="true">4.23.</strong> switch</a></li><li class="chapter-item expanded "><a href="plugins/system-resolver.html"><strong aria-hidden="true">4.24.</strong> system-resolver</a></li><li class="chapter-item expanded "><a href="plugins/tls-client.html"><strong aria-hidden="true">4.25.</strong> tls-client</a></li><li class="chapter-item expanded "><a href="plugins/tls-obfs-client.html"><strong aria-hidden="true">4.26.</strong> tls-obfs-client</a></li><li class="chapter-item expanded "><a href="plugins/trojan-client.html"><strong aria-hidden="true">4.27.</strong> trojan-client</a></li><li class="chapter-item expanded "><a href="plugins/vmess-client.html"><strong aria-hidden="true">4.28.</strong> vmess-client</a></li><li class="chapter-item expanded "><a href="plugins/vpn-tun.html"><strong aria-hidden="true">4.29.</strong> vpn-tun</a></li><li class="chapter-item expanded "><a href="plugins/ws-client.html"><strong aria-hidden="true">4.30.</strong> ws-client</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Internal</div></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">YtFlowCore Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="profile-and-plugin"><a class="header" href="#profile-and-plugin">Profile and Plugin</a></h1>
+<p>Profile and Plugin are two core entities in YtFlow. When YtFlowCore launches, it retrieves the specified profile from the database, along with all plugins included in the profile. Then, the plugins are loaded and started to respond to incoming connections. Errors occur during parsing or loading plugins will be reported to the user. In this case, YtFlowCore may or may not reject running the profile, depending on the implementation.</p>
+<h2 id="profile"><a class="header" href="#profile">Profile</a></h2>
+<p>A profile consists of a collection of plugins that collectively defines runtime behavior of YtFlowCore. There is not too much interesting fields inside a profile itself. Instead, you may customize the network flow by modifying the plugins.</p>
+<p>Remember that a YtFlowCore instance only runs one profile at a time. If you want to switch to a different profile, you will need to restart the YtFlowCore instance, or reconnect through the UI.</p>
+<h2 id="plugin"><a class="header" href="#plugin">Plugin</a></h2>
+<p>A plugin in a profile is an atomic instance of certain functions, such as stream encoding and decoding, destination rewrite, and dispatching to different plugins. They are designed to be as small as possible, so that you can make the most of them by chaining them in a creative way.</p>
+<p>You may have already noticed that outbound client plugins, such as <a href="./plugins/shadowsocks-client.html"><code>shadowsocks-client</code></a> and <a href="./plugins/socks5-client.html"><code>socks5-client</code></a>, care nothing about which address or port your proxy server is running on. They only encode  destination addresses into the streams, but do not change the destination. To redirect all streams to the proxy server, you will need a <a href="./plugins/redirect.html"><code>redirect</code></a> plugin.</p>
+<blockquote>
+<p>Note that plugins are a integrated part of YtFlowCore. Currently, there is no such mechanism to dynamically load a new type of plugin from a shared library.</p>
+</blockquote>
+<h3 id="parameters"><a class="header" href="#parameters">Parameters</a></h3>
+<p>To customize a plugin, you modify the parameters of it. For each plugin, the parameters are encoded in a <a href="https://cbor.io/">CBOR</a> object. You don't have to know what <a href="https://cbor.io/">CBOR</a> exactly is, because the editor will automatically convert <a href="https://cbor.io/">CBOR</a> to JSON and vice versa. Sometimes you will see such object in the editor:</p>
+<pre><code class="language-json">{
+  &quot;__byte_repr&quot;: &quot;utf8&quot;,
+  &quot;data&quot;: &quot;my_trojan_password&quot;
+}
+</code></pre>
+<p>Don't be scared. Most of the time, you can treat them as strings with content of the <code>data</code> field. You see this because the editor encountered a binary buffer field, which may possibly contain non-UTF-8 data. In this case, the actual data is displayed in <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> format.</p>
+<pre><code class="language-json">{
+    &quot;__byte_repr&quot;: &quot;base64&quot;,
+    &quot;data&quot;: &quot;3q2+7w==&quot;
+}
+</code></pre>
+<p>A plugin can have many access points. Plugins chain to each other by specifying names and access points of other plugins in its parameters.</p>
+<h3 id="entry-plugin"><a class="header" href="#entry-plugin">Entry Plugin</a></h3>
+<p>Some plugins like <a href="./plugins/socket-listener.html"><code>socket-listener</code></a> and <a href="./plugins/stack.html"><code>ip-stack</code></a> are made to work as entry plugins. They are supposed to be the entry points of the whole profile, and therefore do not provide any access point.</p>
+<p>In the editor, you can set a plugin as entry plugin, or unset to deactivate it. There can be multiple entry plugins in a profile. Note that every plugin can be an entry plugin, but most plugins will have no effect at runtime.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="basics.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="access-point-and-descriptor.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="basics.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="access-point-and-descriptor.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+        <script src="ace.js"></script>
+        <script src="editor.js"></script>
+        <script src="mode-rust.js"></script>
+        <script src="theme-dawn.js"></script>
+        <script src="theme-tomorrow_night.js"></script>
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
