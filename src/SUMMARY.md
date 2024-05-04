@@ -19,6 +19,7 @@
     - [http-obfs-server](./plugins/http-obfs-server.md)
     - [http-proxy-client](./plugins/http-proxy-client.md)
     - [ip-stack](./plugins/ip-stack.md)
+    - [list-dispatcher](./plugins/list-dispatcher.md)
     - [netif](./plugins/netif.md)
     - [null](./plugins/null.md)
     - [redirect](./plugins/redirect.md)
