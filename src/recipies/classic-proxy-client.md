@@ -71,7 +71,7 @@
     "host": "my.proxy.server.com.",
     "port": 8388
   },
-  "tcp_next": "resolve-dest.tcp",
+  "tcp_next": "phy-socket",
   "udp_next": "null.udp"
 }
 ```
@@ -106,3 +106,4 @@ null
 ## Revision History
 
 - 2023-04-29: Removed `phy`.
+- 2024-04-05: Fixed reference to `resolve-dest` in `proxy-redir`.
